@@ -41,8 +41,8 @@ class EconomicConfig:
     base_price_level: float = 10.0
     base_wage_level: float = 50.0
 
-    # Production
-    productivity_factor: float = 1.0
+    # Production (units of goods per worker per round)
+    productivity_factor: float = 10.0
 
     # LLM settings
     model: str = "claude-opus-4-6"

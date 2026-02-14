@@ -17,17 +17,18 @@ logger = logging.getLogger(__name__)
 class EconomicEnvironment:
     """Master orchestrator for the economic simulation.
 
-    Runs the 10-phase game loop each round:
+    Each round has 11 phases:
       1. Government policy
-      2. Firm decisions
-      3. Worker decisions
+      2. Firm decisions (wages, prices, hiring)
+      3. Worker POV — employment decisions only
       4. Labor market clearing
       5. Production
-      6. Goods market clearing
-      7. Tax collection & transfers
-      8. Statistics update
-      9. Notify all agents
-      10. Record round data
+      6. Consumer POV — spending decisions only (now knows real wage + inventory)
+      7. Goods market clearing
+      8. Tax collection & transfers
+      9. Update firm financials
+      10. Statistics update
+      11. Notify all agents & record
     """
 
     def __init__(self, config: EconomicConfig, llm_client: AnthropicLLMClient, output_dir: str = "results"):
@@ -82,6 +83,7 @@ class EconomicEnvironment:
             "num_employees": len(firm.employees),
             "revenue": firm.revenue,
             "inventory": firm.inventory,
+            "capital": firm.capital,
         }
 
     def _worker_public_info(self, worker: WorkerAgent) -> dict:
@@ -107,7 +109,7 @@ class EconomicEnvironment:
         logger.info("Simulation complete.")
 
     def run_single_round(self, round_num: int):
-        """Execute one round of the economic simulation (10 phases)."""
+        """Execute one round of the economic simulation (11 phases)."""
         self.round_num = round_num
         logger.info(f"--- Round {round_num}/{self.config.num_rounds} ---")
 
@@ -126,20 +128,22 @@ class EconomicEnvironment:
             firm_actions[firm.name] = action
             firm.price = action["price"]
 
-        # === PHASE 3: WORKER DECISIONS ===
-        logger.info("Phase 3: Worker decisions")
+        # === PHASE 3: WORKER POV — EMPLOYMENT DECISIONS ===
+        logger.info("Phase 3: Worker POV — employment decisions")
         world_state = self.get_world_state()
-        worker_actions = {}
+        employment_actions = {}
         firm_names = [f.name for f in self.firms]
         for worker in self.workers:
             action = worker.decide(world_state, round_num)
-            # Re-validate employer choice against actual firm names
-            action = ResponseParser.validate_worker_action(action, firm_names)
-            worker_actions[worker.name] = action
+            # Validate employer choice against actual firm names
+            employer = action.get("chosen_employer")
+            if employer and employer not in firm_names:
+                action["chosen_employer"] = None
+            employment_actions[worker.name] = action
 
         # === PHASE 4: LABOR MARKET CLEARING ===
         logger.info("Phase 4: Labor market clearing")
-        labor_results = self.labor_market.clear(firm_actions, worker_actions, self.firms, self.workers)
+        labor_results = self.labor_market.clear(firm_actions, employment_actions, self.firms, self.workers)
 
         # === PHASE 5: PRODUCTION ===
         logger.info("Phase 5: Production")
@@ -148,8 +152,25 @@ class EconomicEnvironment:
             output = self.production.produce(firm)
             production_results[firm.name] = output
 
-        # === PHASE 6: GOODS MARKET CLEARING ===
-        logger.info("Phase 6: Goods market clearing")
+        # === PHASE 6: CONSUMER POV — SPENDING DECISIONS ===
+        # Now workers know their actual wage and can see what's on the shelves
+        logger.info("Phase 6: Consumer POV — spending decisions")
+        world_state = self.get_world_state()
+        consumer_actions = {}
+        for worker in self.workers:
+            action = worker.decide_consumption(world_state, round_num)
+            consumer_actions[worker.name] = action
+
+        # Merge into a combined worker_actions dict for downstream compatibility
+        worker_actions = {}
+        for name in employment_actions:
+            worker_actions[name] = {
+                **employment_actions[name],
+                **consumer_actions[name],
+            }
+
+        # === PHASE 7: GOODS MARKET CLEARING ===
+        logger.info("Phase 7: Goods market clearing")
         transfer_per_worker = self._current_policy["spending"].get("transfers_to_workers", 0) / max(
             len(self.workers), 1
         )
@@ -161,23 +182,23 @@ class EconomicEnvironment:
             transfer_per_worker,
         )
 
-        # === PHASE 7: TAX COLLECTION & FISCAL SETTLEMENT ===
-        logger.info("Phase 7: Fiscal settlement")
+        # === PHASE 8: TAX COLLECTION & FISCAL SETTLEMENT ===
+        logger.info("Phase 8: Fiscal settlement")
         fiscal_results = self._fiscal_settlement(goods_results, labor_results)
 
-        # === PHASE 8: UPDATE FIRM FINANCIALS ===
-        logger.info("Phase 8: Update financials")
+        # === PHASE 9: UPDATE FIRM FINANCIALS ===
+        logger.info("Phase 9: Update financials")
         self._update_firm_financials(firm_actions, goods_results, fiscal_results)
 
-        # === PHASE 9: STATISTICS UPDATE ===
-        logger.info("Phase 9: Statistics update")
+        # === PHASE 10: STATISTICS UPDATE ===
+        logger.info("Phase 10: Statistics update")
         self.statistics.update(
             round_num, self.firms, self.workers, self.government,
             goods_results, fiscal_results,
         )
 
-        # === PHASE 10: NOTIFY ALL AGENTS & RECORD ===
-        logger.info("Phase 10: Notify & record")
+        # === PHASE 11: NOTIFY ALL AGENTS & RECORD ===
+        logger.info("Phase 11: Notify & record")
         summary = self._build_round_summary(
             round_num, labor_results, goods_results, fiscal_results, production_results,
         )
@@ -212,13 +233,10 @@ class EconomicEnvironment:
         income_tax_rate = self._current_policy["income_tax_rate"]
         corporate_tax_rate = self._current_policy["corporate_tax_rate"]
 
-        # Income tax: already implicitly handled in goods market (after-tax income).
-        # But we need to actually collect it for the treasury.
         income_tax_collected = sum(
             w.income * income_tax_rate for w in self.workers if w.employer is not None
         )
 
-        # Corporate tax on revenue
         corporate_tax_collected = sum(
             goods_results["firm_revenue"].get(f.name, 0) * corporate_tax_rate
             for f in self.firms
@@ -227,12 +245,11 @@ class EconomicEnvironment:
         total_tax = income_tax_collected + corporate_tax_collected
         self.government.treasury += total_tax
 
-        # Infrastructure spending boosts productivity next round (simple bonus)
+        # Infrastructure spending boosts productivity next round
         infra_spending = self._current_policy["spending"].get("infrastructure", 0)
         if infra_spending > 0:
-            # Small productivity boost proportional to infrastructure spending
             self.config.productivity_factor = max(
-                0.5, 1.0 + infra_spending / 1000.0
+                0.5, self.config.productivity_factor + infra_spending / 1000.0
             )
 
         return {
