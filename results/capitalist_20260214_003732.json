@@ -1,0 +1,496 @@
+{
+  "run_id": "20260214_003732",
+  "config": {
+    "system": "capitalist",
+    "num_rounds": 3,
+    "num_firms": 2,
+    "num_workers": 3,
+    "productivity_factor": 1.012,
+    "income_tax_rate_range": [
+      0.05,
+      0.25
+    ],
+    "corporate_tax_rate_range": [
+      0.05,
+      0.2
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "statistics": {
+        "round_num": 1,
+        "gdp": 28.5,
+        "unemployment_rate": 0.0,
+        "avg_wage": 55.0,
+        "avg_price": 9.5,
+        "inflation": 0.0,
+        "gini": 0.03653846153846154,
+        "total_production": 3.0,
+        "total_demand": 157.38333333333335,
+        "total_supply": 0.0,
+        "tax_revenue": 18.78,
+        "government_treasury": 18.78,
+        "num_workers": 3,
+        "num_employed": 3,
+        "firm_profits": {
+          "Firm_0": -136.5,
+          "Firm_1": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 154.33333333333334,
+          "Worker_1": 182.83333333333334,
+          "Worker_2": 182.83333333333334
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.1,
+          "corporate_tax_rate": 0.08,
+          "spending": {
+            "infrastructure": 250.0,
+            "transfers_to_workers": 100.0,
+            "subsidies_to_firms": 150.0
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 55.0,
+            "price": 9.5,
+            "hiring_target": 10
+          },
+          "Firm_1": {
+            "wage_offer": 52.0,
+            "price": 9.5,
+            "hiring_target": 5
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.6
+          },
+          "Worker_1": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.65
+          },
+          "Worker_2": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.65
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {
+            "Worker_2": "Firm_0",
+            "Worker_1": "Firm_0",
+            "Worker_0": "Firm_0"
+          },
+          "unemployed": [],
+          "wages_paid": {
+            "Firm_0": 165.0,
+            "Firm_1": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 3.0,
+            "Firm_1": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 28.5,
+            "Firm_1": 0.0
+          },
+          "unmet_demand": 128.88333333333335
+        },
+        "fiscal": {
+          "income_tax_collected": 16.5,
+          "corporate_tax_collected": 2.2800000000000002,
+          "total_tax": 18.78
+        }
+      }
+    },
+    {
+      "round": 2,
+      "statistics": {
+        "round_num": 2,
+        "gdp": 42.0,
+        "unemployment_rate": 0.0,
+        "avg_wage": 62.0,
+        "avg_price": 29.5,
+        "inflation": 2.1052631578947367,
+        "gini": 0.061140378060117774,
+        "total_production": 3.0,
+        "total_demand": 100.44000000000001,
+        "total_supply": 0.0,
+        "tax_revenue": 21.540000000000003,
+        "government_treasury": 23.320000000000004,
+        "num_workers": 3,
+        "num_employed": 3,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": -144.0
+        },
+        "worker_wealth": {
+          "Worker_0": 179.44333333333333,
+          "Worker_1": 227.32333333333335,
+          "Worker_2": 238.63333333333335
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.1,
+          "corporate_tax_rate": 0.07,
+          "spending": {
+            "infrastructure": 10.0,
+            "transfers_to_workers": 0.0,
+            "subsidies_to_firms": 7.0
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 42.0,
+            "price": 45.0,
+            "hiring_target": 8
+          },
+          "Firm_1": {
+            "wage_offer": 62.0,
+            "price": 14.0,
+            "hiring_target": 3
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.55
+          },
+          "Worker_1": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.7
+          },
+          "Worker_2": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.55
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {
+            "Worker_2": "Firm_1",
+            "Worker_1": "Firm_1",
+            "Worker_0": "Firm_1"
+          },
+          "unemployed": [],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 186.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 3.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 42.0
+          },
+          "unmet_demand": 58.44000000000001
+        },
+        "fiscal": {
+          "income_tax_collected": 18.6,
+          "corporate_tax_collected": 2.9400000000000004,
+          "total_tax": 21.540000000000003
+        }
+      }
+    },
+    {
+      "round": 3,
+      "statistics": {
+        "round_num": 3,
+        "gdp": 133.864,
+        "unemployment_rate": 0.0,
+        "avg_wage": 48.0,
+        "avg_price": 70.0,
+        "inflation": 1.3728813559322033,
+        "gini": 0.06307331922086022,
+        "total_production": 3.0000000000000004,
+        "total_demand": 133.864,
+        "total_supply": 1.087657142857143,
+        "tax_revenue": 19.55184,
+        "government_treasury": 19.871840000000002,
+        "num_workers": 3,
+        "num_employed": 3,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": -10.135999999999996
+        },
+        "worker_wealth": {
+          "Worker_0": 179.44333333333333,
+          "Worker_1": 229.63133333333334,
+          "Worker_2": 240.94133333333335
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.08,
+          "corporate_tax_rate": 0.06,
+          "spending": {
+            "infrastructure": 12.0,
+            "transfers_to_workers": 6.0,
+            "subsidies_to_firms": 5.0
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 66.0,
+            "price": 70.0,
+            "hiring_target": 5
+          },
+          "Firm_1": {
+            "wage_offer": 48.0,
+            "price": 70.0,
+            "hiring_target": 3
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 1.0
+          },
+          "Worker_1": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.95
+          },
+          "Worker_2": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.95
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {
+            "Worker_2": "Firm_1",
+            "Worker_1": "Firm_1",
+            "Worker_0": "Firm_1"
+          },
+          "unemployed": [],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 144.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 1.9123428571428573
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 133.864
+          },
+          "unmet_demand": 0.0
+        },
+        "fiscal": {
+          "income_tax_collected": 11.52,
+          "corporate_tax_collected": 8.03184,
+          "total_tax": 19.55184
+        }
+      }
+    }
+  ],
+  "agent_logs": {
+    "Federal_Government": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "income_tax_rate": 0.1,
+            "corporate_tax_rate": 0.08,
+            "spending": {
+              "infrastructure": 250.0,
+              "transfers_to_workers": 100.0,
+              "subsidies_to_firms": 150.0
+            }
+          },
+          "reasoning": "Looking at the current economic conditions, this is essentially a cold-start economy. GDP is $0, no one is employed, and firms have no revenue. The key challenge is kickstarting economic activity.\n\n**Analysis:**\n- **Firms** have set wages ($50) and prices ($10) but have zero employees and zero revenue. They need workers and demand to get going.\n- **Workers** have $100 in savings each but no income. They need jobs and purchasing power.\n- **Unemployment is reported as 0%** but that's misleading \u2014 0 out of 3 are employed, likely just a reporting artifact.\n- **Treasury has $500** \u2014 this is our seed capital to jumpstart the economy.\n\n**Strategy:**\n- Keep taxes low to encourage hiring and spending. With no economic activity yet, tax rates matter less for revenue but signal a business-friendly environment.\n- **Infrastructure spending** is critical \u2014 it creates foundational value, stimulates demand, and benefits everyone. This should get the largest share.\n- **Subsidies to firms** \u2014 a moderate amount to help firms afford to hire their first workers and begin production.\n- **Transfers to workers** \u2014 some direct support to give workers purchasing power so they can buy from firms, creating the demand loop.\n- I want to spend most of the treasury now to break the zero-activity trap, but keep a small reserve.\n\n**Allocation reasoning:**\n- Infrastructure: $250 (50%) \u2014 long-term growth foundation\n- Subsidies to firms: $150 (30%) \u2014 help firms hire and produce\n- Transfers to workers: $100 (20%) \u2014 seed consumer demand\n- Total: $500 (full treasury deployment to maximize kickstart)\n\nTax rates set low to encourage activity once it begins:\n\n```json\n{\"income_tax_rate\": 0.10, \"corporate_tax_rate\": 0.08, \"spending\": {\"infrastructure\": 250, \"transfers_to_workers\": 100, \"subsidies_to_firms\": 150}}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "income_tax_rate": 0.1,
+            "corporate_tax_rate": 0.07,
+            "spending": {
+              "infrastructure": 10.0,
+              "transfers_to_workers": 0.0,
+              "subsidies_to_firms": 7.0
+            }
+          },
+          "reasoning": "**Analysis of Round 1 Results:**\n\n- The economy is alive! GDP reached $28, all 3 workers are employed (0% unemployment), and inequality is very low (Gini 0.037). Excellent start.\n- **Firm_0** captured all workers and all production \u2014 it's the sole active firm. Firm_1 has zero employees, zero revenue, but has $1,075 in capital (it received subsidies without producing).\n- **Worker savings** grew from $100 to $173 average \u2014 purchasing power is building.\n- **Treasury is only $19** \u2014 we spent heavily in Round 1 to kickstart things. Now we must be fiscally conservative.\n- **Key concern:** Firm_1 is inactive \u2014 a monopoly situation. Ideally Firm_1 would compete, which would benefit workers and consumers. However, with only 3 workers, concentration is somewhat inevitable.\n- **Wages ($55) vs Prices ($9.5):** Workers can afford goods, the consumption cycle is working.\n\n**Strategy for Round 2:**\n- Keep taxes low to sustain momentum. With a tiny treasury, I can't afford to be generous with spending anyway.\n- Slight tax adjustment \u2014 I could nudge corporate tax slightly lower to encourage Firm_1 to enter the market, but the real issue is labor supply, not tax burden.\n- Spend modestly \u2014 allocate nearly all of the $19 treasury. Focus on infrastructure for continued growth, with a small nudge toward firm subsidies to potentially activate Firm_1.\n- Avoid transfers to workers \u2014 they're employed and saving well, Gini is near zero.\n\n**Allocation:**\n- Infrastructure: $10 \u2014 continued investment in growth fundamentals\n- Subsidies to firms: $7 \u2014 encourage competition/Firm_1 activation\n- Transfers to workers: $0 \u2014 not needed with full employment and rising savings\n- Reserve: $2\n\n```json\n{\"income_tax_rate\": 0.10, \"corporate_tax_rate\": 0.07, \"spending\": {\"infrastructure\": 10, \"transfers_to_workers\": 0, \"subsidies_to_firms\": 7}}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "income_tax_rate": 0.08,
+            "corporate_tax_rate": 0.06,
+            "spending": {
+              "infrastructure": 12.0,
+              "transfers_to_workers": 6.0,
+              "subsidies_to_firms": 5.0
+            }
+          },
+          "reasoning": "**Analysis of Round 2 Results:**\n\n- **GDP grew 50%** ($28 \u2192 $42) \u2014 strong growth. Full employment maintained. Good.\n- **But inflation is 210.5%!** This is alarming. The average price level jumped from $9.5 to $29.5. This is driven by Firm_0 setting a wildly high price of $45 (likely trying to compensate for losing all workers), pulling the average up even though Firm_1 sold at $14.\n- **Labor market flip:** All workers moved from Firm_0 to Firm_1, which offered higher wages ($62 vs $42). Firm_0 is now the inactive firm. We essentially swapped which firm is the monopoly producer.\n- **Gini rose slightly** (0.037 \u2192 0.061) but still very low \u2014 inequality is not a concern.\n- **Worker savings growing** ($173 \u2192 $215) \u2014 healthy household balance sheets.\n- **Firm_0's price of $45 is predatory/desperate** \u2014 no one bought from them. The real effective price is $14 (Firm_1's price). The \"average price\" metric is misleading.\n- **Treasury at $23** \u2014 modest but workable for final round.\n\n**Key concerns for Round 3 (final round):**\n1. **Inflation signal** \u2014 the reported 210.5% is largely a statistical artifact from Firm_0's absurd pricing. Real inflation (Firm_1's price: $9.5 \u2192 $14) is ~47%, which is still high.\n2. **Competition failure** \u2014 only one firm active at a time. With 3 workers and 2 firms, this seems structural.\n3. **Maximize final-round flourishing** \u2014 full employment, support purchasing power, keep growth going.\n\n**Strategy:**\n- Keep taxes low to maintain employment and growth momentum.\n- Spend remaining treasury \u2014 no reason to save for after Round 3.\n- Focus on infrastructure (lasting value) and modest worker transfers to offset price increases and boost final consumption.\n- Small firm subsidy to potentially encourage both firms to compete.\n\n```json\n{\"income_tax_rate\": 0.08, \"corporate_tax_rate\": 0.06, \"spending\": {\"infrastructure\": 12, \"transfers_to_workers\": 6, \"subsidies_to_firms\": 5}}\n```"
+        }
+      ]
+    },
+    "Firm_0": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 55.0,
+            "price": 9.5,
+            "hiring_target": 10
+          },
+          "reasoning": "I need to think carefully about my strategy for Round 1.\n\n**Situation Analysis:**\n\n- Starting fresh with $1,000 capital and no employees\n- Corporate tax rate is low at 8%, which is favorable\n- I'm receiving a $75 subsidy, which helps offset costs\n- My competitor (Firm_1) is offering wage=$50 and price=$10 with 0 employees\n- No minimum wage or price cap constraints\n- This is round 1 of 3, so I need to establish my business quickly\n\n**Strategy Considerations:**\n\n1. **Wages:** I need to attract workers. My competitor is offering $50. I should offer slightly more to attract workers first, but not so much that it kills my margins. Each worker produces goods (typically around 10 units per worker in these simulations).\n\n2. **Pricing:** My competitor is pricing at $10. I want to be competitive - pricing slightly below could capture more demand. But I also need to cover costs. If I pay a worker $55 and they produce ~10 units, my cost per unit is $5.50. Pricing at $9-10 gives good margin.\n\n3. **Hiring:** With $1,000 capital, I can afford roughly 1000/55 \u2248 18 workers at $55/worker. But I should be cautious - I need demand to exist to sell goods. Starting with a moderate workforce makes sense. If each worker produces ~10 units and I price at $9.5, revenue per worker \u2248 $95. Cost per worker = $55. Profit per worker before tax \u2248 $40. \n\n4. **Scaling:** I want to hire enough to generate meaningful profit but not overextend. Let me aim for around 10 workers - that's $550 in wages, manageable with my $1,000 capital. Expected revenue: ~100 units \u00d7 $9.5 = $950. Profit before tax: $950 - $550 = $400. After 8% tax: $368. Plus $75 subsidy = $443.\n\n**Decision:** Slightly outbid competitor on wages to attract talent, price competitively to capture demand, and hire a solid workforce.\n\n```json\n{\"wage_offer\": 55.0, \"price\": 9.5, \"hiring_target\": 10}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 42.0,
+            "price": 45.0,
+            "hiring_target": 8
+          },
+          "reasoning": "**Situation Analysis:**\n\nRound 1 was rough - I lost $136. Key learnings:\n\n1. **Each worker produces only 1 unit**, not 10 as I assumed. This completely changes the economics.\n2. **Revenue per worker:** 1 unit \u00d7 $9.5 = $9.5\n3. **Cost per worker:** $55 wage\n4. **Loss per worker:** -$45.50 before tax\n\nThis is unsustainable at current wages and prices. I need to dramatically restructure.\n\n**The core problem:** At $55 wage and $9.5 price with 1 unit/worker, I lose ~$45 per worker. I need to either massively raise prices or cut wages, or both.\n\n**Demand analysis:** Total consumer demand was 157 units last round, but only 3 units were produced (all by me). There's massive unmet demand! This means I can raise prices significantly. Consumers had money to spend (3 workers \u00d7 $55 \u00d7 (1-tax) + government spending).\n\n**Price strategy:** With 157 units demanded and very little supply, I can charge much higher prices. Workers earned ~$55 each, paid some income tax, so had maybe $45-50 each in disposable income. If I price at $50, workers could buy ~1 unit each. But I need price > wage to be profitable with 1 unit/worker production.\n\nActually, let me reconsider. With wage at $55 and 1 unit produced, I need price > $55 to break even per worker. But if workers are my customers, they can't afford prices above their after-tax wage (~$45-50).\n\n**The trap:** The economy needs more firms/workers to generate enough demand. Let me try: moderate wages to attract workers, higher prices to capture the unmet demand, and hire more workers since demand (157) far exceeds supply.\n\n**New approach:** Raise price substantially (demand far exceeds supply), keep wages competitive but lower, hire more workers to capture the huge unmet demand.\n\nWith price at $45 and wage at $42, profit per worker \u2248 $45 - $42 = $3 before tax. Small margin but sustainable, and more workers = more total profit.\n\n```json\n{\"wage_offer\": 42.0, \"price\": 45.0, \"hiring_target\": 8}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 66.0,
+            "price": 70.0,
+            "hiring_target": 5
+          },
+          "reasoning": "**Situation Analysis:**\n\nRound 2 was a disaster - I lost all my workers to Firm_1 because they offered $62 wage vs my $42. My price of $45 was irrelevant since I had no workers and produced nothing.\n\n**Key learnings:**\n1. Workers go to the highest wage bidder - this is the primary competition mechanism\n2. Each worker produces 1 unit\n3. Firm_1 paid $62/worker, sold at $14, losing ~$48/worker (revenue $42 - costs $186 = -$144 before subsidies). They're burning capital too!\n4. Total consumer demand was 100 units but only 3 produced - still massive unmet demand\n\n**Last round strategy - I must get workers:**\n\nFirm_1 is offering $62. I MUST outbid them to get workers. The fundamental economics are that both firms lose money per worker at these wage/price ratios, but having workers and revenue is better than having nothing.\n\n**The math:** If I offer $65 wage and price at $30:\n- Cost per worker: $65\n- Revenue per worker: depends on demand. With 100 demand last round and price of $30, units should sell.\n- Loss per worker: $65 - $30 = -$35, but at least I'm participating in the economy.\n\nActually, let me think about this differently. Consumer demand was 100 units at average price $29.5. If I price lower, I capture more demand. But with only a few units produced, everything sells regardless.\n\n**Optimal strategy for final round:** I need to outbid Firm_1 on wages to get workers, then price as high as possible while still selling everything. With massive unmet demand (100 vs 3 supply), I can price high.\n\nLet me offer $66 to steal workers, price at $55 (demand far exceeds supply so goods will sell), and hire all 3 workers.\n\n- Revenue: 3 \u00d7 $55 = $165\n- Costs: 3 \u00d7 $66 = $198\n- Still a loss of $33 before tax... but with subsidy...\n\nActually, let me push price even higher. Supply is so scarce relative to demand.\n\n```json\n{\"wage_offer\": 66.0, \"price\": 70.0, \"hiring_target\": 5}\n```"
+        }
+      ]
+    },
+    "Firm_1": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 52.0,
+            "price": 9.5,
+            "hiring_target": 5
+          },
+          "reasoning": "I need to think carefully about my strategy for Round 1.\n\n**Analysis:**\n\n1. **Starting position:** $1000 capital, 0 employees, no history. I also receive a $75 subsidy.\n\n2. **Competitor:** Firm_0 is offering $50 wage and $10 price, with 0 employees. We're both starting fresh.\n\n3. **Tax environment:** 8% corporate tax is relatively low, which is favorable for profits.\n\n4. **Labor market:** With 0% unemployment reported (likely because the game just started), I need to offer competitive wages to attract workers.\n\n5. **Strategy considerations:**\n   - I need workers to produce goods, and goods to sell for revenue.\n   - Each worker produces some units (I'll assume a reasonable productivity level).\n   - I want to slightly outcompete Firm_0 on wages to attract workers, while keeping prices competitive to attract customers.\n   - I don't want to overspend on wages given my $1000 capital constraint.\n\n6. **Wage:** Firm_0 offers $50. I'll offer slightly more at $52 to attract more workers. If I hire 5 workers, that's $260 in wage costs per round, which is manageable with $1000 capital.\n\n7. **Price:** Firm_0 is at $10. I'll price slightly lower at $9.5 to capture more demand. Lower prices should drive higher volume.\n\n8. **Hiring:** I want to hire enough workers to produce meaningful output but not overextend. Starting with 5 workers seems prudent - costs would be ~$260, leaving plenty of capital buffer. If each worker produces ~10 units and I sell at $9.5, revenue would be ~$475, giving profit of ~$475 - $260 = $215 before tax, ~$198 after tax, plus the $75 subsidy.\n\n9. **Risk management:** With 3 rounds total, I want to be aggressive enough to establish market position but not so aggressive I run out of capital.\n\n```json\n{\"wage_offer\": 52.0, \"price\": 9.5, \"hiring_target\": 5}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 62.0,
+            "price": 14.0,
+            "hiring_target": 3
+          },
+          "reasoning": "**Analysis of Round 1 Results:**\n\n1. **Critical problem:** I got ZERO workers despite offering $52 wage. Firm_0 offered $55 and got all 3 workers. The labor market is competitive and I need to outbid to attract any workers.\n\n2. **Demand insight:** Total consumer demand was 157 units but only 3 units were produced and sold. There's massive unmet demand! This means I can potentially charge higher prices since demand far exceeds supply.\n\n3. **Capital position:** I have $1075 (original $1000 + $75 subsidy). Firm_0 has $936. I have more capital to work with.\n\n4. **Key takeaway:** I MUST offer higher wages than Firm_0's $55 to poach workers. With demand of 157 and only 3 units produced, there's enormous room for both firms to sell goods.\n\n5. **Price strategy:** With demand at 157 and supply at only 3, I can actually raise prices. The market is severely undersupplied. I'll price at $10 or even higher - customers are desperate for goods.\n\n6. **Wage strategy:** I need to offer significantly more than $55 to steal workers from Firm_0. I'll offer $65. Even at higher wages, the profit per unit should be strong given the supply shortage.\n\n7. **Hiring target:** All 3 workers if possible. Even hiring 1-2 would be valuable. At $65/worker with 3 workers = $195 costs. If I produce 3 units at $11 each = $33 revenue... wait, that's terrible.\n\n8. **Rethinking:** Revenue per unit is low relative to wage costs. But the subsidy helps. Let me reconsider - maybe each worker produces more units at scale? In Round 1, 3 workers produced 3 units (1 per worker). At $9.5 price and $55 wage, Firm_0 barely broke even. I need to price much higher to make this work.\n\n9. **Revised approach:** Price higher ($12-15) to improve margins, offer $60 wage to attract workers, and hope the strong demand supports higher prices.\n\n```json\n{\"wage_offer\": 62.0, \"price\": 14.0, \"hiring_target\": 3}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 48.0,
+            "price": 70.0,
+            "hiring_target": 3
+          },
+          "reasoning": "**Analysis of Round 2 Results:**\n\n1. **I got all 3 workers!** My $62 wage outbid Firm_0's $55 (they seem to have dropped to $42 this round). \n\n2. **Profit problem:** I lost $144. Revenue was only $42 (3 units \u00d7 $14) but costs were $186 (3 workers \u00d7 $62). Each worker produces 1 unit, so my cost per unit is $62 but I sold at $14. This business model is deeply unprofitable at these ratios.\n\n3. **Fundamental issue:** 1 worker = 1 unit of production. At any reasonable wage, the price per unit must exceed the wage to be profitable. If I pay $62/worker and produce 1 unit, I need to price above $62 to break even!\n\n4. **Demand check:** Total demand was 100 units last round. Firm_0 priced at $45 with no inventory. I priced at $14 and sold all 3 units. Demand far exceeds supply, so I can price much higher.\n\n5. **Firm_0 strategy:** They're offering $42 wage and $45 price. If they get workers at $42, they'd make $3/unit profit. Smart.\n\n6. **Optimal strategy for Round 3:**\n   - I need price > wage to be profitable\n   - Demand is ~100 units, supply will be at most 3-6 units total, so pricing high is fine\n   - I should price very high since demand massively exceeds supply\n   - I need to offer just enough wage to retain/attract workers vs Firm_0's $42 offer\n   - Offer $48 wage (above Firm_0's $42) and price at $65+\n   - With 3 workers: costs = $144, revenue = 3 \u00d7 $65 = $195, profit before tax = $51, after 6% tax = ~$48\n\n7. **Last round - maximize profit:** Price as high as demand allows. With 100 units demanded and only ~3 supplied, I can go even higher.\n\n```json\n{\"wage_offer\": 48.0, \"price\": 70.0, \"hiring_target\": 3}\n```"
+        }
+      ]
+    },
+    "Worker_0": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.6
+          },
+          "reasoning": "I need to think through my options carefully.\n\n**Employment Decision:**\nBoth firms offer the same wage ($50.0) and the same price ($9.5). Since they're identical, there's no strong reason to prefer one over the other. But I should definitely work rather than be unemployed, since:\n- Working: $50 wage \u2192 after 10% tax = $45 take-home, plus $100 government transfer = $145 total income\n- Unemployed: $0 wage, just $100 government transfer\n\nWorking gives me $45 more per round. I'll pick Firm_0 (arbitrary choice since they're identical).\n\n**Spending Decision:**\nLet me think about my financial situation:\n- After-tax wage: $50 \u00d7 0.9 = $45\n- Government transfer: $100\n- Total income this round: $145\n- Current savings: $100\n- This is round 1 of 3, so I have some time horizon to consider\n\nGoods cost $9.5 each. If I spend, say, 60% of my income: $145 \u00d7 0.6 = $87, which buys about 9 units of goods.\n\nI want to balance consumption now with having savings for security. With only 3 rounds, I don't need to hoard excessively, but I also want a buffer. I have $100 in savings already, which is decent.\n\nI'll spend a moderate-to-high fraction since:\n- The economy needs consumers to keep firms profitable (so they keep employing me)\n- Only 3 rounds, so excessive saving isn't very useful\n- I have a reasonable savings cushion already\n\nI'll go with about 0.55-0.65 spending. Let me settle on 0.6 \u2014 spend $87, save $58, bringing total savings to ~$158.\n\n```json\n{\"chosen_employer\": \"Firm_0\", \"spending_fraction\": 0.6}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.55
+          },
+          "reasoning": "Let me think through the changes from Round 1.\n\n**Key observations:**\n- Firm_0 raised wages to $55 (good!) but **dramatically** raised prices from $9.5 to $45.0 per unit. That's almost 5x inflation!\n- Firm_1 is offering $52 wage with prices at $14.0 \u2014 much cheaper goods\n- I no longer receive the government transfer ($0 this round)\n- My savings are $154, which is healthy\n\n**Employment Decision:**\nLet me compare real purchasing power:\n\n- Firm_0: After-tax wage = $55 \u00d7 0.9 = $49.50. At Firm_0's price of $45, that buys ~1.1 units. At Firm_1's price of $14, that buys ~3.5 units.\n- Firm_1: After-tax wage = $52 \u00d7 0.9 = $46.80. At Firm_1's price of $14, that buys ~3.3 units. At Firm_0's price of $45, that buys ~1.04 units.\n\nThe wages are similar, but Firm_1's goods are WAY cheaper. Also, Firm_1 has no employees \u2014 if nobody joins Firm_1, they produce nothing and we're stuck buying only from Firm_0 at $45/unit. The economy needs competition to bring prices down. I should switch to Firm_1 to help create supply of affordable goods AND get a decent wage.\n\n**Spending Decision:**\n- Income: $52 \u00d7 0.9 = $46.80\n- Savings: $154\n- Last round is next, so I should be willing to spend a bit more\n- But prices are volatile \u2014 Firm_0 jacked up prices. I want to buy from the cheaper option (Firm_1 at $14)\n- I'll spend moderately, around 0.55, prioritizing the cheaper goods\n\nSpending $46.80 \u00d7 0.55 = ~$25.74, buying ~1.8 units at $14 each. Reasonable.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 0.55}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 1.0
+          },
+          "reasoning": "Let me analyze this final round carefully.\n\n**Key observations:**\n- Both firms now charge $70.0 per unit \u2014 prices have gone insane (from $9.5 \u2192 $45/$14 \u2192 $70)\n- Firm_1 pays $62, Firm_0 pays only $42\n- Firm_1 already has 3 employees (all of us switched last round), Firm_0 has none\n- Tax rate dropped slightly to 8%, and I get a small $2 transfer\n- This is the LAST round \u2014 no need to save for the future\n\n**Employment Decision:**\n- Firm_1: After-tax = $62 \u00d7 0.92 = $57.04, plus $2 transfer = $59.04\n- Firm_0: After-tax = $42 \u00d7 0.92 = $38.64, plus $2 transfer = $40.64\n\nFirm_1 pays significantly more ($59.04 vs $40.64). Both firms charge the same price ($70), so there's no price advantage to switching. Staying with Firm_1 is clearly better.\n\nAt $70/unit, my income of $59.04 can't even buy a single unit! That's terrible purchasing power. But with $179 in savings, I can supplement.\n\n**Spending Decision:**\nThis is the last round \u2014 there's no point saving money after the game ends. I should spend aggressively. \n\nTotal resources: $59.04 income + $179 savings = $238.04\nAt $70/unit, that's about 3.4 units max if I spent everything.\n\nSince savings have no value after the final round, I should spend a very high fraction of my income. In fact, I'd ideally spend all my income plus dip into savings. I'll set spending fraction to 1.0 (spend all income on goods), and presumably savings can also be used.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 1.0}\n```"
+        }
+      ]
+    },
+    "Worker_1": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.65
+          },
+          "reasoning": "I need to think through my options carefully.\n\n**Employment Decision:**\nBoth firms offer identical wages ($50.0) and identical prices ($9.5). Since they're the same, I'll just pick one. Neither has any employees yet, so there's no difference in job security or firm stability to consider.\n\nIf I work for a firm:\n- Gross income: $50.0\n- After tax (10%): $50.0 \u00d7 0.9 = $45.0\n- Plus government transfer: $100\n- Total after-tax income: $145.0\n\nIf I stay unemployed:\n- Just the government transfer: $100\n- No wage income\n\nWorking is clearly better - I gain $45 after-tax income by taking a job.\n\n**Spending Decision:**\nWith $145 total income and goods priced at $9.5 each, I can buy about 15 units if I spend everything.\n\nThis is round 1 of 3. I have $100 in savings already. I should spend a reasonable amount but also save some for future rounds in case conditions change (wages drop, prices rise, or I lose employment). \n\nHowever, with only 3 rounds, there's limited need for long-term savings. I should spend a decent fraction to enjoy consumption now, but keep some buffer. I'll aim to spend around 60-70% of my income.\n\n$145 \u00d7 0.65 \u2248 $94.25, which buys about 9.9 units of goods. That seems reasonable.\n\nSaving $145 \u00d7 0.35 \u2248 $50.75 adds to my $100 savings for a cushion of ~$150.75 going into round 2.\n\nI'll go with Firm_0 since I have to pick one, and spend about 65% of my income.\n\n```json\n{\"chosen_employer\": \"Firm_0\", \"spending_fraction\": 0.65}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.7
+          },
+          "reasoning": "Let me think through this carefully.\n\n**Employment Decision:**\nFirm_0 (my current employer): wage=$55.0, price=$45.0\nFirm_1: wage=$52.0, price=$14.0\n\nThe wages are close ($55 vs $52), but the prices are very different ($45 vs $14). \n\nIf I work for Firm_0:\n- After-tax income: $55 \u00d7 0.9 = $49.50\n- No government transfer this round\n- Goods at Firm_0 cost $45 each - I could barely buy 1 unit with my entire income!\n\nIf I work for Firm_1:\n- After-tax income: $52 \u00d7 0.9 = $46.80\n- Goods at Firm_1 cost $14 each - I could buy about 3.3 units\n\nThe key insight: Firm_0 has jacked up prices to $45 per unit (from $9.5 last round) - that's massive inflation. Firm_1 is offering much more affordable goods at $14. Even though Firm_1 pays slightly less, my purchasing power is far greater if goods are priced at $14 instead of $45.\n\nAlso, Firm_1 has no employees - they need workers to produce. If I switch, I help create supply of affordable goods. Firm_0 seems to be price gouging.\n\nI'll switch to Firm_1.\n\n**Spending Decision:**\nAfter-tax income from Firm_1: $46.80\nSavings: $183\n\nThis is round 2 of 3 (one more round after this). I want to buy goods at the cheaper price of $14. I should spend a moderate amount. With $46.80 income, spending ~60% gives me $28.08, which buys about 2 units at $14.\n\nBut I also have solid savings ($183), and only one round left. I can afford to spend a bit more freely. I'll spend around 70%.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 0.7}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.95
+          },
+          "reasoning": "Let me analyze this final round carefully.\n\n**Employment Decision:**\nFirm_0: wage=$42.0, price=$70.0, no employees\nFirm_1 (current employer): wage=$62.0, price=$70.0, 3 employees\n\nBoth firms now charge the same price ($70.0), but Firm_1 pays significantly more ($62 vs $42). This is an easy choice - stay with Firm_1.\n\nIf I work for Firm_1:\n- Gross income: $62\n- After tax (8%): $62 \u00d7 0.92 = $57.04\n- Plus government transfer: $2\n- Total after-tax income: $59.04\n\nIf I work for Firm_0:\n- Gross income: $42\n- After tax (8%): $42 \u00d7 0.92 = $38.64\n- Plus government transfer: $2\n- Total after-tax income: $40.64\n\nFirm_1 is clearly better by about $18.40.\n\n**Spending Decision:**\nThis is the LAST round - there's no future to save for. Any money I don't spend is essentially wasted (no more rounds to use savings).\n\nTotal available resources: $59.04 income + $227 savings = $286.04\n\nHowever, goods cost $70 each - that's extremely expensive. Both firms charge $70. With $59.04 income, even spending 100% only buys 0.84 units. Prices have gone crazy.\n\nSince this is the final round, I should spend aggressively. There's no reason to hold savings after the game ends. I should spend a high fraction of my income. In fact, I'd ideally want to spend from savings too, but the spending fraction only applies to current income.\n\nI'll spend nearly everything since there's no future round to save for.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 0.95}\n```"
+        }
+      ]
+    },
+    "Worker_2": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": "Firm_0",
+            "spending_fraction": 0.65
+          },
+          "reasoning": "I need to think through my options carefully.\n\n**Employment Decision:**\nBoth firms are offering the same wage ($50.0) and the same price ($9.5). Since they're identical, there's no strong reason to prefer one over the other. But I should definitely work rather than be unemployed, since:\n- Working: $50 wage \u2192 after 10% tax = $45, plus $100 government transfer = $145 total income\n- Unemployed: $0 wage \u2192 $0 after tax, plus $100 government transfer = $100 total income\n\nWorking gives me $45 more per round. I'll pick Firm_0 (arbitrary choice since they're identical).\n\n**Spending Decision:**\nMy after-tax income if employed: $50 \u00d7 0.9 = $45, plus $100 transfer = $145 total.\nCurrent savings: $100.\n\nWith goods priced at $9.5, each unit of goods costs $9.5. This is round 1 of 3, so I need to think about saving for future rounds but also about consuming now.\n\nConsiderations:\n- I have $100 in savings as a buffer\n- There are only 3 rounds, so I don't need to hoard excessively\n- Spending stimulates the economy (firms need revenue to pay wages)\n- But I want some cushion in case things change\n\nI think spending around 60-70% makes sense. This lets me buy about 9-10 units of goods ($145 \u00d7 0.65 \u2248 $94.25, which is ~9.9 units at $9.5 each) while saving roughly $50 for future security. With only 3 rounds, moderate spending seems wise \u2014 not too frugal, not too reckless.\n\n```json\n{\"chosen_employer\": \"Firm_0\", \"spending_fraction\": 0.65}\n```"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.55
+          },
+          "reasoning": "Let me think through this carefully.\n\n**Employment Decision:**\n- Firm_0: wage=$55, price=$45 per unit\n- Firm_1: wage=$52, price=$14 per unit\n\nThe wages are close ($55 vs $52), but the prices are very different. Firm_0 has jacked up prices to $45 per unit (from $9.5!), while Firm_1 is offering goods at $14 per unit.\n\nAfter-tax income comparison:\n- Firm_0: $55 \u00d7 0.9 = $49.50\n- Firm_1: $52 \u00d7 0.9 = $46.80\n\nThe difference is only $2.70 in after-tax income. But as a consumer, the price difference is massive. At Firm_0's price of $45, my $49.50 buys ~1.1 units. At Firm_1's price of $14, my $46.80 buys ~3.3 units. \n\nAlso, Firm_1 has zero employees and needs workers to produce anything. If I move there, I help create cheaper goods for everyone. Firm_0 seems to be exploiting its monopoly position by hiking prices dramatically.\n\nI should switch to Firm_1 \u2014 slightly less pay but much better purchasing power, and it helps create competition in the market.\n\n**Spending Decision:**\nNo government transfer this round. After-tax income: $52 \u00d7 0.9 = $46.80. Savings: $183.\n\nThis is round 2 of 3, so one more round after this. I want to buy goods at the cheaper price ($14 from Firm_1 if they produce). With prices inflated at Firm_0, I should be strategic. I'll spend moderately \u2014 maybe around 55% \u2014 to get goods while keeping savings healthy for the final round.\n\n$46.80 \u00d7 0.55 \u2248 $25.74, which buys ~1.8 units at $14.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 0.55}\n```"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": "Firm_1",
+            "spending_fraction": 0.95
+          },
+          "reasoning": "Let me analyze this final round carefully.\n\n**Employment Decision:**\n- Firm_0: wage=$42, price=$70, 0 employees\n- Firm_1: wage=$62, price=$70, 3 employees (I'm currently here)\n\nBoth firms are charging the same price ($70 per unit \u2014 outrageously inflated from the original $9.5!). But the wages are very different:\n- Firm_1 after-tax: $62 \u00d7 0.92 = $57.04, plus $2 transfer = $59.04\n- Firm_0 after-tax: $42 \u00d7 0.92 = $38.64, plus $2 transfer = $40.64\n\nFirm_1 pays $18.40 more after tax. Since prices are identical, there's no reason to switch. Staying with Firm_1 is clearly better.\n\n**Spending Decision:**\nThis is the LAST round. There's no future round to save for. In a typical economic game, savings after the final round have little or no value. So I should spend aggressively.\n\nMy total resources:\n- Savings: $239\n- This round's income: $59.04\n- Total available: ~$298\n\nHowever, the spending fraction likely only applies to this round's income ($59.04), not my total savings. Even so, since this is the last round, there's no point in saving income \u2014 I should spend as much as possible.\n\nAt $70 per unit, even spending 100% of my income ($59.04) only buys ~0.84 units. These prices are terrible, but goods still have value and money after the game ends doesn't.\n\nI'll spend nearly everything since there's no future to save for.\n\n```json\n{\"chosen_employer\": \"Firm_1\", \"spending_fraction\": 0.95}\n```"
+        }
+      ]
+    }
+  }
+}
