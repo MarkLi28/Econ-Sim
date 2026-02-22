@@ -1,0 +1,3378 @@
+{
+  "run_id": "20260214_010051",
+  "config": {
+    "system": "capitalist",
+    "num_rounds": 10,
+    "num_firms": 5,
+    "num_workers": 8,
+    "productivity_factor": 10.194350495020002,
+    "income_tax_rate_range": [
+      0.05,
+      0.25
+    ],
+    "corporate_tax_rate_range": [
+      0.05,
+      0.2
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "statistics": {
+        "round_num": 1,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 30.0,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 350.0,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 107.5,
+          "Worker_1": 107.5,
+          "Worker_2": 107.5,
+          "Worker_3": 107.5,
+          "Worker_4": 107.5,
+          "Worker_5": 107.5,
+          "Worker_6": 107.5,
+          "Worker_7": 107.5
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 60.0,
+            "transfers_to_workers": 60.0,
+            "subsidies_to_firms": 30.0
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 30.0
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 2,
+      "statistics": {
+        "round_num": 2,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 21.0,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 245.0,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 112.75,
+          "Worker_1": 112.75,
+          "Worker_2": 112.75,
+          "Worker_3": 112.75,
+          "Worker_4": 112.75,
+          "Worker_5": 112.75,
+          "Worker_6": 112.75,
+          "Worker_7": 112.75
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 42.0,
+            "transfers_to_workers": 42.0,
+            "subsidies_to_firms": 21.0
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 21.0
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 3,
+      "statistics": {
+        "round_num": 3,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 14.700000000000001,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 171.5,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 116.425,
+          "Worker_1": 116.425,
+          "Worker_2": 116.425,
+          "Worker_3": 116.425,
+          "Worker_4": 116.425,
+          "Worker_5": 116.425,
+          "Worker_6": 116.425,
+          "Worker_7": 116.425
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 29.400000000000002,
+            "transfers_to_workers": 29.400000000000002,
+            "subsidies_to_firms": 14.700000000000001
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 14.700000000000001
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 4,
+      "statistics": {
+        "round_num": 4,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 10.29,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 120.05000000000001,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 118.9975,
+          "Worker_1": 118.9975,
+          "Worker_2": 118.9975,
+          "Worker_3": 118.9975,
+          "Worker_4": 118.9975,
+          "Worker_5": 118.9975,
+          "Worker_6": 118.9975,
+          "Worker_7": 118.9975
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 20.58,
+            "transfers_to_workers": 20.58,
+            "subsidies_to_firms": 10.29
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 10.29
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 5,
+      "statistics": {
+        "round_num": 5,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 7.203000000000001,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 84.03500000000001,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 120.79825,
+          "Worker_1": 120.79825,
+          "Worker_2": 120.79825,
+          "Worker_3": 120.79825,
+          "Worker_4": 120.79825,
+          "Worker_5": 120.79825,
+          "Worker_6": 120.79825,
+          "Worker_7": 120.79825
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 14.406,
+            "transfers_to_workers": 14.406,
+            "subsidies_to_firms": 7.203
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 7.203000000000001
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 6,
+      "statistics": {
+        "round_num": 6,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 5.042100000000001,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 58.8245,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 122.058775,
+          "Worker_1": 122.058775,
+          "Worker_2": 122.058775,
+          "Worker_3": 122.058775,
+          "Worker_4": 122.058775,
+          "Worker_5": 122.058775,
+          "Worker_6": 122.058775,
+          "Worker_7": 122.058775
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 10.084200000000003,
+            "transfers_to_workers": 10.084200000000003,
+            "subsidies_to_firms": 5.042100000000001
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 5.042100000000001
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 7,
+      "statistics": {
+        "round_num": 7,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 3.52947,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 41.17715,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 122.9411425,
+          "Worker_1": 122.9411425,
+          "Worker_2": 122.9411425,
+          "Worker_3": 122.9411425,
+          "Worker_4": 122.9411425,
+          "Worker_5": 122.9411425,
+          "Worker_6": 122.9411425,
+          "Worker_7": 122.9411425
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 7.05894,
+            "transfers_to_workers": 7.05894,
+            "subsidies_to_firms": 3.52947
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 3.52947
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 8,
+      "statistics": {
+        "round_num": 8,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 2.470629,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 28.824004999999996,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 123.55879974999999,
+          "Worker_1": 123.55879974999999,
+          "Worker_2": 123.55879974999999,
+          "Worker_3": 123.55879974999999,
+          "Worker_4": 123.55879974999999,
+          "Worker_5": 123.55879974999999,
+          "Worker_6": 123.55879974999999,
+          "Worker_7": 123.55879974999999
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 4.941258,
+            "transfers_to_workers": 4.941258,
+            "subsidies_to_firms": 2.470629
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 2.470629
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 9,
+      "statistics": {
+        "round_num": 9,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 1.7294402999999998,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 20.1768035,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 123.991159825,
+          "Worker_1": 123.991159825,
+          "Worker_2": 123.991159825,
+          "Worker_3": 123.991159825,
+          "Worker_4": 123.991159825,
+          "Worker_5": 123.991159825,
+          "Worker_6": 123.991159825,
+          "Worker_7": 123.991159825
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 3.458880599999999,
+            "transfers_to_workers": 3.458880599999999,
+            "subsidies_to_firms": 1.7294402999999996
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 1.7294402999999998
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    },
+    {
+      "round": 10,
+      "statistics": {
+        "round_num": 10,
+        "gdp": 0.0,
+        "unemployment_rate": 1.0,
+        "avg_wage": 0.0,
+        "avg_price": 10.0,
+        "inflation": 0.0,
+        "gini": 0.0,
+        "total_production": 0.0,
+        "total_demand": 1.21060821,
+        "total_supply": 0.0,
+        "tax_revenue": 0.0,
+        "government_treasury": 14.123762449999997,
+        "num_workers": 8,
+        "num_employed": 0,
+        "firm_profits": {
+          "Firm_0": 0.0,
+          "Firm_1": 0.0,
+          "Firm_2": 0.0,
+          "Firm_3": 0.0,
+          "Firm_4": 0.0
+        },
+        "worker_wealth": {
+          "Worker_0": 124.29381187749999,
+          "Worker_1": 124.29381187749999,
+          "Worker_2": 124.29381187749999,
+          "Worker_3": 124.29381187749999,
+          "Worker_4": 124.29381187749999,
+          "Worker_5": 124.29381187749999,
+          "Worker_6": 124.29381187749999,
+          "Worker_7": 124.29381187749999
+        }
+      },
+      "actions": {
+        "government": {
+          "income_tax_rate": 0.15,
+          "corporate_tax_rate": 0.125,
+          "spending": {
+            "infrastructure": 2.42121642,
+            "transfers_to_workers": 2.42121642,
+            "subsidies_to_firms": 1.21060821
+          }
+        },
+        "firms": {
+          "Firm_0": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_1": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_2": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_3": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "Firm_4": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          }
+        },
+        "workers": {
+          "Worker_0": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_1": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_2": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_3": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_4": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_5": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_6": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          },
+          "Worker_7": {
+            "chosen_employer": null,
+            "spending_fraction": 0.5
+          }
+        }
+      },
+      "outcomes": {
+        "labor_market": {
+          "assignments": {},
+          "unemployed": [
+            "Worker_0",
+            "Worker_1",
+            "Worker_2",
+            "Worker_3",
+            "Worker_4",
+            "Worker_5",
+            "Worker_6",
+            "Worker_7"
+          ],
+          "wages_paid": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          }
+        },
+        "goods_market": {
+          "firm_sales": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "firm_revenue": {
+            "Firm_0": 0.0,
+            "Firm_1": 0.0,
+            "Firm_2": 0.0,
+            "Firm_3": 0.0,
+            "Firm_4": 0.0
+          },
+          "unmet_demand": 1.21060821
+        },
+        "fiscal": {
+          "income_tax_collected": 0,
+          "corporate_tax_collected": 0.0,
+          "total_tax": 0.0
+        }
+      }
+    }
+  ],
+  "agent_logs": {
+    "Federal_Government": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 60.0,
+              "transfers_to_workers": 60.0,
+              "subsidies_to_firms": 30.0
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 42.0,
+              "transfers_to_workers": 42.0,
+              "subsidies_to_firms": 21.0
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 29.400000000000002,
+              "transfers_to_workers": 29.400000000000002,
+              "subsidies_to_firms": 14.700000000000001
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 20.58,
+              "transfers_to_workers": 20.58,
+              "subsidies_to_firms": 10.29
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 14.406,
+              "transfers_to_workers": 14.406,
+              "subsidies_to_firms": 7.203
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 10.084200000000003,
+              "transfers_to_workers": 10.084200000000003,
+              "subsidies_to_firms": 5.042100000000001
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 7.05894,
+              "transfers_to_workers": 7.05894,
+              "subsidies_to_firms": 3.52947
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 4.941258,
+              "transfers_to_workers": 4.941258,
+              "subsidies_to_firms": 2.470629
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 3.458880599999999,
+              "transfers_to_workers": 3.458880599999999,
+              "subsidies_to_firms": 1.7294402999999996
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "income_tax_rate": 0.15,
+            "corporate_tax_rate": 0.125,
+            "spending": {
+              "infrastructure": 2.42121642,
+              "transfers_to_workers": 2.42121642,
+              "subsidies_to_firms": 1.21060821
+            }
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Firm_0": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Firm_1": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Firm_2": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Firm_3": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Firm_4": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "wage_offer": 50.0,
+            "price": 10.0,
+            "hiring_target": 2
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_0": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_1": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_2": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_3": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_4": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_5": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_6": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    },
+    "Worker_7": {
+      "action_log": [
+        {
+          "round": 1,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 1,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 2,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 3,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 4,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 5,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 6,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 7,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 8,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 9,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "action": {
+            "chosen_employer": null
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        },
+        {
+          "round": 10,
+          "phase": "consumer",
+          "action": {
+            "spending_fraction": 0.5
+          },
+          "reasoning": "[FALLBACK \u2014 parse failed]"
+        }
+      ]
+    }
+  }
+}
