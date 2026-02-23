@@ -1,14 +1,14 @@
 import logging
+from typing import Dict, List, Optional
 
-from econ_sim.config import EconomicConfig
-from econ_sim.llm.client import AnthropicLLMClient
-from econ_sim.llm.parser import ResponseParser
+from econ_sim.config import EconomicConfig, Industry
 from econ_sim.agents.government import GovernmentAgent
 from econ_sim.agents.firm import FirmAgent
 from econ_sim.agents.worker import WorkerAgent
-from econ_sim.engine.markets import LaborMarket, GoodsMarket
+from econ_sim.engine.markets import LaborMarket, InputMarket, GoodsMarket
 from econ_sim.engine.production import ProductionFunction
 from econ_sim.engine.statistics import StatisticsTracker
+from econ_sim.llm.client import AnthropicLLMClient
 from econ_sim.output.recorder import SimulationRecorder
 
 logger = logging.getLogger(__name__)
@@ -17,298 +17,382 @@ logger = logging.getLogger(__name__)
 class EconomicEnvironment:
     """Master orchestrator for the economic simulation.
 
-    Each round has 11 phases:
-      1. Government policy
-      2. Firm decisions (wages, prices, hiring)
-      3. Worker POV — employment decisions only
-      4. Labor market clearing
-      5. Production
-      6. Consumer POV — spending decisions only (now knows real wage + inventory)
-      7. Goods market clearing
-      8. Tax collection & transfers
-      9. Update firm financials
-      10. Statistics update
-      11. Notify all agents & record
+    13-phase round loop:
+      1.  Government policy (LLM: Opus)
+      2.  Firm decisions (LLM: per industry tier)
+      3.  Input market clearing (deterministic: Manufacturing → Housing/Tech)
+      4.  Worker employment decisions (LLM: Haiku × archetypes)
+      5.  Labor market clearing (deterministic)
+      6.  Production (deterministic, input-constrained)
+      7.  Necessity goods market clearing (deterministic)
+      8.  Consumer spending decisions (LLM: Haiku × archetypes)
+      9.  Discretionary goods market clearing (deterministic)
+      10. Tax & fiscal settlement (deterministic)
+      11. Firm wage payments (deterministic)
+      12. Institutional integrity dynamics (deterministic)
+      13. Statistics, notify agents, record
     """
 
-    def __init__(self, config: EconomicConfig, llm_client: AnthropicLLMClient, output_dir: str = "results"):
+    def __init__(self, config: EconomicConfig, output_dir: str = "results"):
         self.config = config
-        self.round_num = 0
+        self.output_dir = output_dir
 
-        # Create agents
-        self.government = GovernmentAgent("Federal_Government", llm_client, config)
-        self.firms = [
-            FirmAgent(f"Firm_{i}", llm_client, config)
-            for i in range(config.num_firms)
-        ]
-        self.workers = [
-            WorkerAgent(
-                f"Worker_{i}",
-                llm_client,
-                config,
-                skill_level=round(0.8 + 0.4 * (i / max(config.num_workers - 1, 1)), 2),
-            )
-            for i in range(config.num_workers)
-        ]
+        self.llm = AnthropicLLMClient(
+            model=config.model_opus,
+            temperature=config.temperature,
+            max_tokens=config.max_tokens,
+        )
 
-        # Engine components
+        self.government = self._create_government()
+        self.firms: List[FirmAgent] = self._create_firms()
+        self.workers: List[WorkerAgent] = self._create_workers()
+        self.worker_map: Dict[str, WorkerAgent] = {w.name: w for w in self.workers}
+
         self.labor_market = LaborMarket(config)
+        self.input_market = InputMarket(config)
         self.goods_market = GoodsMarket(config)
         self.production = ProductionFunction(config)
-        self.statistics = StatisticsTracker()
-        self.recorder = SimulationRecorder(output_dir, config)
+        self.stats = StatisticsTracker(config)
+        self.recorder = SimulationRecorder(config, output_dir)
 
-        # Current government policy (updated each round)
-        self._current_policy: dict = {
-            "income_tax_rate": sum(config.income_tax_rate_range) / 2,
-            "corporate_tax_rate": sum(config.corporate_tax_rate_range) / 2,
-            "spending": {"infrastructure": 0, "transfers_to_workers": 0, "subsidies_to_firms": 0},
-        }
-
-    def get_world_state(self) -> dict:
-        """Snapshot of the entire economy — passed to agents as context."""
-        return {
-            "round": self.round_num,
-            "government_policy": self._current_policy,
-            "firms": [self._firm_public_info(f) for f in self.firms],
-            "workers": [self._worker_public_info(w) for w in self.workers],
-            "statistics": self.statistics.current(),
-        }
-
-    def _firm_public_info(self, firm: FirmAgent) -> dict:
-        return {
-            "name": firm.name,
-            "price": firm.price,
-            "wage": firm.wage,
-            "num_employees": len(firm.employees),
-            "revenue": firm.revenue,
-            "inventory": firm.inventory,
-            "capital": firm.capital,
-        }
-
-    def _worker_public_info(self, worker: WorkerAgent) -> dict:
-        return {
-            "name": worker.name,
-            "employer": worker.employer,
-            "savings": worker.savings,
-            "skill_level": worker.skill_level,
-        }
-
-    def run_simulation(self):
-        """Run the full simulation for all configured rounds."""
         logger.info(
-            f"Starting {self.config.system.value} simulation: "
-            f"{self.config.num_rounds} rounds, {self.config.num_firms} firms, "
-            f"{self.config.num_workers} workers"
+            f"Environment: {config.label()} | "
+            f"c={config.coordination_mechanism:.2f} s={config.planning_structure:.2f} "
+            f"m={config.meta_game_constraint:.2f} | "
+            f"{len(self.firms)} firms, {len(self.workers)} worker archetypes"
         )
+
+    # ------------------------------------------------------------------
+    # Agent creation
+    # ------------------------------------------------------------------
+
+    def _create_government(self) -> GovernmentAgent:
+        return GovernmentAgent("Government", self.llm, self.config)
+
+    def _create_firms(self) -> List[FirmAgent]:
+        firms = []
+        for industry, ind_config in self.config.industry_configs.items():
+            for i in range(ind_config.num_firms):
+                name = f"{ind_config.name}_Firm_{i+1}"
+                firms.append(FirmAgent(name, self.llm, self.config, ind_config))
+        return firms
+
+    def _create_workers(self) -> List[WorkerAgent]:
+        workers = []
+        for profile in self.config.worker_profiles:
+            name = f"Worker_{profile.name.title()}"
+            workers.append(WorkerAgent(name, self.llm, self.config, profile))
+        return workers
+
+    # ------------------------------------------------------------------
+    # Main simulation loop
+    # ------------------------------------------------------------------
+
+    def run(self) -> dict:
+        logger.info(f"Starting simulation: {self.config.num_rounds} rounds")
+        world_state = self._build_world_state(round_num=0)
 
         for round_num in range(1, self.config.num_rounds + 1):
-            self.run_single_round(round_num)
+            logger.info(f"\n{'='*60}")
+            logger.info(f"ROUND {round_num} / {self.config.num_rounds}")
+            logger.info(f"{'='*60}")
+            self._run_round(round_num, world_state)
+            world_state = self._build_world_state(round_num)
 
-        self.recorder.save(self.government, self.firms, self.workers)
-        logger.info("Simulation complete.")
+        regime = self.stats.classify_regime()
+        logger.info(f"\nSimulation complete. Regime: {regime}")
 
-    def run_single_round(self, round_num: int):
-        """Execute one round of the economic simulation (11 phases)."""
-        self.round_num = round_num
-        logger.info(f"--- Round {round_num}/{self.config.num_rounds} ---")
+        return self.recorder.finalize(
+            stats_history=self.stats.history,
+            regime=regime,
+            integrity_history=[s.institutional_integrity for s in self.stats.history],
+            cost_summary=self.llm.cost_summary(),
+        )
 
-        # === PHASE 1: GOVERNMENT POLICY ===
+    def _run_round(self, round_num: int, world_state: dict):
+        for firm in self.firms:
+            firm.end_round_reset()
+        for worker in self.workers:
+            worker.end_round_reset()
+
+        # ── Phase 1: Government policy ──────────────────────────────
         logger.info("Phase 1: Government policy")
-        world_state = self.get_world_state()
-        govt_action = self.government.decide(world_state, round_num)
-        self._apply_government_policy(govt_action)
+        gov_action = self.government.decide(world_state, round_num)
+        income_tax = gov_action["income_tax_rate"]
+        corp_tax = gov_action["corporate_tax_rate"]
+        industry_policies = gov_action.get("industry_policies", {})
 
-        # === PHASE 2: FIRM DECISIONS ===
+        # ── Phase 2: Firm decisions ─────────────────────────────────
         logger.info("Phase 2: Firm decisions")
-        world_state = self.get_world_state()
-        firm_actions = {}
+        firm_actions: dict = {}
         for firm in self.firms:
             action = firm.decide(world_state, round_num)
+            firm.apply_action(action)
             firm_actions[firm.name] = action
-            firm.price = action["price"]
+            if firm.lobby_spending_this_round > 0:
+                self.government.receive_lobby(
+                    firm.name,
+                    firm.lobby_spending_this_round,
+                    firm.lobby_message_this_round,
+                )
 
-        # === PHASE 3: WORKER POV — EMPLOYMENT DECISIONS ===
-        logger.info("Phase 3: Worker POV — employment decisions")
-        world_state = self.get_world_state()
-        employment_actions = {}
-        firm_names = [f.name for f in self.firms]
-        for worker in self.workers:
-            action = worker.decide(world_state, round_num)
-            # Validate employer choice against actual firm names
-            employer = action.get("chosen_employer")
-            if employer and employer not in firm_names:
-                action["chosen_employer"] = None
-            employment_actions[worker.name] = action
-
-        # === PHASE 4: LABOR MARKET CLEARING ===
-        logger.info("Phase 4: Labor market clearing")
-        labor_results = self.labor_market.clear(firm_actions, employment_actions, self.firms, self.workers)
-
-        # === PHASE 5: PRODUCTION ===
-        logger.info("Phase 5: Production")
-        production_results = {}
+        # ── Phase 3: Input market clearing ──────────────────────────
+        logger.info("Phase 3: Input market clearing")
         for firm in self.firms:
-            output = self.production.produce(firm)
-            production_results[firm.name] = output
+            ind_cfg = self.config.industry_configs[firm.industry]
+            firm._input_budget_this_round = (
+                firm_actions[firm.name].get("input_budget", 0.0)
+                if ind_cfg.input_industry is not None else 0.0
+            )
+        input_results = self.input_market.clear(self.firms)
 
-        # === PHASE 6: CONSUMER POV — SPENDING DECISIONS ===
-        # Now workers know their actual wage and can see what's on the shelves
-        logger.info("Phase 6: Consumer POV — spending decisions")
-        world_state = self.get_world_state()
-        consumer_actions = {}
+        # ── Phase 4: Worker employment decisions ────────────────────
+        logger.info("Phase 4: Worker employment decisions")
+        updated_ws = self._build_world_state(round_num)
+        worker_employment_actions: dict = {}
         for worker in self.workers:
-            action = worker.decide_consumption(world_state, round_num)
+            action = worker.decide_employment(updated_ws, round_num)
+            worker_employment_actions[worker.name] = action
+
+        # ── Phase 5: Labor market clearing ──────────────────────────
+        logger.info("Phase 5: Labor market clearing")
+        labor_results = self.labor_market.clear(
+            firm_actions, worker_employment_actions, self.firms, self.workers
+        )
+
+        # ── Phase 6: Production ─────────────────────────────────────
+        logger.info("Phase 6: Production")
+        for firm in self.firms:
+            units = self.production.produce(firm, self.worker_map)
+            logger.debug(f"  {firm.name}: {units:.1f} units produced")
+
+        # ── Phase 7: Necessity goods market clearing ────────────────
+        logger.info("Phase 7: Necessity clearing")
+        transfer_per_worker = (
+            gov_action["spending"].get("transfers_to_workers", 0.0)
+            / max(len(self.workers), 1)
+        )
+        necessity_results = self.goods_market.clear_necessities(
+            self.firms, self.workers, income_tax, transfer_per_worker
+        )
+
+        # ── Phase 8: Consumer spending decisions ────────────────────
+        logger.info("Phase 8: Consumer decisions")
+        updated_ws2 = self._build_world_state(round_num, necessity_results=necessity_results)
+        consumer_actions: dict = {}
+        for worker in self.workers:
+            action = worker.decide_consumption(updated_ws2, round_num)
             consumer_actions[worker.name] = action
 
-        # Merge into a combined worker_actions dict for downstream compatibility
-        worker_actions = {}
-        for name in employment_actions:
-            worker_actions[name] = {
-                **employment_actions[name],
-                **consumer_actions[name],
-            }
-
-        # === PHASE 7: GOODS MARKET CLEARING ===
-        logger.info("Phase 7: Goods market clearing")
-        transfer_per_worker = self._current_policy["spending"].get("transfers_to_workers", 0) / max(
-            len(self.workers), 1
-        )
-        goods_results = self.goods_market.clear(
-            self.firms,
-            self.workers,
-            worker_actions,
-            self._current_policy["income_tax_rate"],
-            transfer_per_worker,
+        # ── Phase 9: Discretionary goods market clearing ────────────
+        logger.info("Phase 9: Discretionary clearing")
+        disc_results = self.goods_market.clear_discretionary(
+            self.firms, self.workers, consumer_actions, necessity_results
         )
 
-        # === PHASE 8: TAX COLLECTION & FISCAL SETTLEMENT ===
-        logger.info("Phase 8: Fiscal settlement")
-        fiscal_results = self._fiscal_settlement(goods_results, labor_results)
-
-        # === PHASE 9: UPDATE FIRM FINANCIALS ===
-        logger.info("Phase 9: Update financials")
-        self._update_firm_financials(firm_actions, goods_results, fiscal_results)
-
-        # === PHASE 10: STATISTICS UPDATE ===
-        logger.info("Phase 10: Statistics update")
-        self.statistics.update(
-            round_num, self.firms, self.workers, self.government,
-            goods_results, fiscal_results,
+        # ── Phase 10: Tax & fiscal settlement ───────────────────────
+        logger.info("Phase 10: Fiscal settlement")
+        fiscal_results = self._settle_fiscal(
+            income_tax, corp_tax, gov_action, industry_policies
         )
 
-        # === PHASE 11: NOTIFY ALL AGENTS & RECORD ===
-        logger.info("Phase 11: Notify & record")
-        summary = self._build_round_summary(
-            round_num, labor_results, goods_results, fiscal_results, production_results,
-        )
-        for agent in [self.government] + self.firms + self.workers:
-            agent.receive_notification(summary)
+        # ── Phase 11: Firm wage payments ────────────────────────────
+        for firm in self.firms:
+            firm.pay_wages()
 
+        # ── Phase 12: Institutional integrity dynamics ───────────────
+        logger.info("Phase 12: Integrity dynamics")
+        self.government.apply_lobby_effects(self.config.lobby_detection_prob)
+        total_suffering = sum(getattr(w, "suffering_score", 0.0) for w in self.workers)
+        self.government.apply_public_pressure(
+            total_suffering, self.config.suffering_pressure_threshold
+        )
+        self.government.clear_lobby_buffer()
+
+        # ── Phase 13: Statistics & recording ────────────────────────
+        logger.info("Phase 13: Statistics")
+        goods_revenue = self.goods_market.combined_revenue(self.firms, necessity_results, disc_results)
+        b2b_revenue = input_results.get("mfg_b2b_revenue", {})
+
+        round_stats = self.stats.update(
+            round_num=round_num,
+            firms=self.firms,
+            workers=self.workers,
+            government=self.government,
+            goods_revenue=goods_revenue,
+            b2b_revenue=b2b_revenue,
+            fiscal_results=fiscal_results,
+            necessity_results=necessity_results,
+        )
+
+        self._notify_agents(round_stats)
         self.recorder.record_round(
-            round_num, self.get_world_state(),
-            govt_action, firm_actions, worker_actions,
-            labor_results, goods_results, fiscal_results,
+            round_num=round_num,
+            stats=round_stats,
+            gov_action=gov_action,
+            firm_states=self._firm_snapshots(),
+            worker_states=self._worker_snapshots(),
+            institutional_integrity=self.government.institutional_integrity,
+            labor_results=labor_results,
         )
+        self._print_round_summary(round_num, round_stats)
 
-        # Print summary to console
-        stats = self.statistics.current()
-        print(
-            f"  Round {round_num}: GDP=${stats['gdp']:.0f}  "
-            f"Unemployment={stats['unemployment_rate']*100:.0f}%  "
-            f"AvgWage=${stats['avg_wage']:.0f}  "
-            f"AvgPrice=${stats['avg_price']:.1f}  "
-            f"Gini={stats['gini']:.3f}  "
-            f"Treasury=${stats['government_treasury']:.0f}"
-        )
+    # ------------------------------------------------------------------
+    # Fiscal settlement
+    # ------------------------------------------------------------------
 
-    def _apply_government_policy(self, action: dict):
-        """Apply government policy and deduct spending from treasury."""
-        self._current_policy = action
-        total_spending = sum(action["spending"].values())
-        self.government.treasury -= total_spending
+    def _settle_fiscal(
+        self,
+        income_tax: float,
+        corp_tax: float,
+        gov_action: dict,
+        industry_policies: dict,
+    ) -> dict:
+        income_tax_rev = sum(w.income * income_tax for w in self.workers)
 
-    def _fiscal_settlement(self, goods_results: dict, labor_results: dict) -> dict:
-        """Collect taxes from firms and workers, update treasury."""
-        income_tax_rate = self._current_policy["income_tax_rate"]
-        corporate_tax_rate = self._current_policy["corporate_tax_rate"]
+        corp_tax_rev = 0.0
+        for firm in self.firms:
+            if firm.profit > 0:
+                tax = firm.profit * corp_tax
+                firm.capital -= tax
+                corp_tax_rev += tax
 
-        income_tax_collected = sum(
-            w.income * income_tax_rate for w in self.workers if w.employer is not None
-        )
+        # Industry-specific subsidies
+        for industry_name, policy in industry_policies.items():
+            subsidy = policy.get("subsidy", 0.0)
+            industry_firms = [f for f in self.firms if f.industry.value == industry_name]
+            if industry_firms and subsidy > 0:
+                per_firm = subsidy / len(industry_firms)
+                for f in industry_firms:
+                    f.capital += per_firm
+                    f.revenue += per_firm
 
-        corporate_tax_collected = sum(
-            goods_results["firm_revenue"].get(f.name, 0) * corporate_tax_rate
-            for f in self.firms
-        )
-
-        total_tax = income_tax_collected + corporate_tax_collected
-        self.government.treasury += total_tax
-
-        # Infrastructure spending boosts productivity next round
-        infra_spending = self._current_policy["spending"].get("infrastructure", 0)
-        if infra_spending > 0:
-            self.config.productivity_factor = max(
-                0.5, self.config.productivity_factor + infra_spending / 1000.0
-            )
+        total_tax = self.government.collect_taxes(income_tax_rev, corp_tax_rev)
+        actual_spending = self.government.execute_spending(gov_action)
 
         return {
-            "income_tax_collected": income_tax_collected,
-            "corporate_tax_collected": corporate_tax_collected,
+            "income_tax_revenue": income_tax_rev,
+            "corporate_tax_revenue": corp_tax_rev,
             "total_tax": total_tax,
+            "spending": actual_spending,
         }
 
-    def _update_firm_financials(self, firm_actions: dict, goods_results: dict, fiscal_results: dict):
-        """Update firm capital, revenue, costs after market clearing."""
-        corporate_tax_rate = self._current_policy["corporate_tax_rate"]
-        subsidy_per_firm = self._current_policy["spending"].get("subsidies_to_firms", 0) / max(
-            len(self.firms), 1
-        )
+    # ------------------------------------------------------------------
+    # World state
+    # ------------------------------------------------------------------
 
-        for firm in self.firms:
-            firm.revenue = goods_results["firm_revenue"].get(firm.name, 0)
-            wage = firm_actions[firm.name]["wage_offer"]
-            firm.costs = wage * len(firm.employees)
-            profit = firm.revenue - firm.costs
-            tax = firm.revenue * corporate_tax_rate
-            firm.capital += profit - tax + subsidy_per_firm
+    def _build_world_state(self, round_num: int, necessity_results: Optional[dict] = None) -> dict:
+        stats = self.stats.current()
+        last_action = getattr(self.government, "_last_action", {})
+        gov_policy = last_action if isinstance(last_action, dict) else {}
 
-    def _build_round_summary(
-        self, round_num, labor_results, goods_results, fiscal_results, production_results,
-    ) -> str:
-        stats = self.statistics.current()
-        employed_list = [
-            f"{name} → {employer}"
-            for name, employer in labor_results["assignments"].items()
+        return {
+            "system_label": self.config.label(),
+            "round_num": round_num,
+            "coordination_mechanism": self.config.coordination_mechanism,
+            "planning_structure": self.config.planning_structure,
+            "meta_game_constraint": self.config.meta_game_constraint,
+            "institutional_integrity": self.government.institutional_integrity,
+            "government_policy": {
+                "income_tax_rate": gov_policy.get("income_tax_rate", 0.15),
+                "corporate_tax_rate": gov_policy.get("corporate_tax_rate", 0.12),
+                "spending": gov_policy.get("spending", {}),
+            },
+            "industry_subsidies": {},
+            "firms": self._firm_snapshots(),
+            "workers": self._worker_snapshots(),
+            "statistics": stats,
+            "gdp": stats.get("gdp", 0.0),
+            "unemployment_rate": stats.get("unemployment_rate", 0.0),
+            "inflation": stats.get("inflation", 0.0),
+            "avg_wage": stats.get("avg_wage", 0.0),
+            "consumer_demand_index": max(0.1, 1.0 - stats.get("unemployment_rate", 0.0)),
+            "unemployed_count": sum(1 for w in self.workers if w.employer is None),
+            "total_workers": sum(w.representative_count for w in self.workers),
+            "necessity_cost_this_round": (necessity_results or {}).get("necessity_cost", {}),
+        }
+
+    def _firm_snapshots(self) -> list:
+        return [
+            {
+                "name": f.name,
+                "industry": f.industry.value,
+                "price": f.price,
+                "wage": f.wage,
+                "capital": f.capital,
+                "inventory": f.inventory,
+                "input_inventory": f.input_inventory,
+                "num_employees": f.num_employees,
+                "revenue": f.revenue,
+                "costs": f.costs,
+                "profit": f.profit,
+                "lobby_spending": f.lobby_spending_this_round,
+                "is_consumer_good": self.config.industry_configs[f.industry].is_consumer_good,
+            }
+            for f in self.firms
         ]
-        unemployed_str = ", ".join(labor_results["unemployed"]) or "none"
 
-        firm_lines = []
-        for f in self.firms:
-            sold = goods_results["firm_sales"].get(f.name, 0)
-            rev = goods_results["firm_revenue"].get(f.name, 0)
-            produced = production_results.get(f.name, 0)
-            firm_lines.append(
-                f"  {f.name}: produced {produced:.0f} units, sold {sold:.1f} units "
-                f"at ${f.price:.1f}, revenue=${rev:.0f}, employees={len(f.employees)}, "
-                f"capital=${f.capital:.0f}"
+    def _worker_snapshots(self) -> list:
+        return [
+            {
+                "name": w.name,
+                "archetype": w.profile.name,
+                "skill_level": w.skill_level,
+                "representative_count": w.representative_count,
+                "employer": w.employer,
+                "industry": w.industry.value if w.industry else None,
+                "wage": w.wage,
+                "savings": w.savings,
+                "suffering_score": w.suffering_score,
+                "productivity_modifier": w.productivity_modifier,
+                "food_consumed": w.food_consumed,
+                "shelter_consumed": w.shelter_consumed,
+            }
+            for w in self.workers
+        ]
+
+    # ------------------------------------------------------------------
+    # Notifications & output
+    # ------------------------------------------------------------------
+
+    def _notify_agents(self, stats):
+        summary = (
+            f"Round {stats.round_num}: GDP=${stats.gdp:.0f} ({stats.gdp_growth:+.1%}), "
+            f"unemployment={stats.unemployment_rate:.1%}, W={stats.welfare_score:.3f}, "
+            f"Gini={stats.gini:.3f}, needs_met={stats.basic_needs_fulfillment_rate:.1%}, "
+            f"integrity={stats.institutional_integrity:.2f}"
+        )
+        self.government.receive_notification(summary)
+        for firm in self.firms:
+            firm.receive_notification(
+                f"Round {stats.round_num}: GDP=${stats.gdp:.0f}, "
+                f"unemployment={stats.unemployment_rate:.1%}, "
+                f"your profit=${firm.profit:.0f}, capital=${firm.capital:.0f}"
+            )
+        for worker in self.workers:
+            worker.receive_notification(
+                f"Round {stats.round_num}: savings=${worker.savings:.0f}, "
+                f"suffering={worker.suffering_score:.2f}, "
+                f"food={worker.food_consumed:.1f}/1.0, shelter={worker.shelter_consumed:.1f}/0.5"
             )
 
-        return (
-            f"=== ROUND {round_num} RESULTS ===\n\n"
-            f"Employment:\n"
-            f"  Hired: {', '.join(employed_list) if employed_list else 'none'}\n"
-            f"  Unemployed: {unemployed_str}\n\n"
-            f"Production & Sales:\n" + "\n".join(firm_lines) + "\n\n"
-            f"Fiscal:\n"
-            f"  Income Tax Collected: ${fiscal_results['income_tax_collected']:.0f}\n"
-            f"  Corporate Tax Collected: ${fiscal_results['corporate_tax_collected']:.0f}\n"
-            f"  Government Treasury: ${self.government.treasury:.0f}\n\n"
-            f"Aggregate:\n"
-            f"  GDP: ${stats['gdp']:.0f}\n"
-            f"  Unemployment Rate: {stats['unemployment_rate']*100:.1f}%\n"
-            f"  Average Wage: ${stats['avg_wage']:.0f}\n"
-            f"  Average Price: ${stats['avg_price']:.1f}\n"
-            f"  Inflation: {stats['inflation']*100:.1f}%\n"
-            f"  Gini Coefficient: {stats['gini']:.3f}\n"
-        )
+    def _print_round_summary(self, round_num: int, stats):
+        def bar(v, n=10):
+            filled = int(max(0.0, min(1.0, v)) * n)
+            return "█" * filled + "░" * (n - filled)
+
+        print(f"\n── Round {round_num} ─────────────────────────────────────────")
+        print(f"  GDP:          ${stats.gdp:>10.2f}  ({stats.gdp_growth:+.1%})")
+        print(f"  Unemployment:  {stats.unemployment_rate:>9.1%}")
+        print(f"  Gini:          {stats.gini:>9.3f}")
+        print(f"  Welfare W:     {stats.welfare_score:>9.3f}  [{bar(stats.welfare_score)}]")
+        print(f"  Basic needs:   {stats.basic_needs_fulfillment_rate:>9.1%}")
+        print(f"  Suffering:     {stats.total_suffering:>9.2f}")
+        print(f"  Integrity:     {self.government.institutional_integrity:>9.2f}  [{bar(self.government.institutional_integrity)}]")
+        print(f"  Lobby $:      ${stats.total_lobby_spending:>10.2f}")
+        print(f"  Treasury:     ${self.government.treasury:>10.2f}")
+        if stats.industry_gdp:
+            print(f"  Industry GDP:")
+            for ind, rev in stats.industry_gdp.items():
+                print(f"    {ind:<16} ${rev:.2f}")
+        print()
