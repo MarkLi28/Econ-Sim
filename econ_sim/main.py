@@ -49,7 +49,8 @@ def main():
                         help="Number of steps per axis in sweep (3=0/0.5/1, 5=0/0.25/0.5/0.75/1)")
 
     # Simulation settings
-    parser.add_argument("--rounds", type=int, default=15, help="Rounds per simulation")
+    parser.add_argument("--rounds", type=int, default=40,
+                        help="Max rounds per simulation (convergence detection may stop earlier)")
     parser.add_argument("--output-dir", type=str, default="results", help="Output directory")
     parser.add_argument("--verbose", action="store_true", help="Enable debug logging")
 
@@ -105,6 +106,11 @@ def _run_single(args):
     print(f"SIMULATION COMPLETE")
     print(f"{'='*60}")
     print(f"  Regime:          {result['regime']}")
+    print(f"  Rounds run:      {result['summary'].get('rounds_run', '?')}")
+    conv = result.get("convergence", {})
+    if conv:
+        print(f"  Trend:           {conv.get('trend', '?')} (confidence={conv.get('confidence', 0):.0%})")
+        print(f"  Convergence:     {conv.get('message', '')}")
     print(f"  Final welfare:   {result['summary']['final_welfare']:.3f}")
     print(f"  Final integrity: {result['summary']['final_integrity']:.2f}")
     print(f"  Final Gini:      {result['summary']['final_gini']:.3f}")

@@ -46,6 +46,7 @@ class SimulationRecorder:
         regime: str,
         integrity_history: list,
         cost_summary: dict,
+        convergence=None,
     ) -> dict:
         """Write full JSON output. Returns the result dict."""
         label = self.config.label()
@@ -79,6 +80,7 @@ class SimulationRecorder:
 
             # Summary statistics (for quick phase diagram lookup)
             "summary": {
+                "rounds_run":           len(stats_history),
                 "final_welfare":        ts["welfare_score"][-1] if ts["welfare_score"] else 0,
                 "final_integrity":      integrity_history[-1] if integrity_history else 1,
                 "final_gini":           ts["gini"][-1] if ts["gini"] else 0,
@@ -87,6 +89,14 @@ class SimulationRecorder:
                 "total_suffering":      ts["total_suffering"][-1] if ts["total_suffering"] else 0,
                 "integrity_trend":      (integrity_history[-1] - integrity_history[0]) if len(integrity_history) > 1 else 0,
                 "welfare_trend":        (ts["welfare_score"][-1] - ts["welfare_score"][0]) if len(ts["welfare_score"]) > 1 else 0,
+            },
+
+            # Convergence / trend classification
+            "convergence": {
+                "trend":      convergence.trend      if convergence else "unknown",
+                "confidence": convergence.confidence if convergence else 0.0,
+                "converged":  convergence.converged  if convergence else False,
+                "message":    convergence.message    if convergence else "",
             },
 
             "time_series": ts,

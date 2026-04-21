@@ -3,6 +3,16 @@ from typing import Dict, Optional
 
 
 @dataclass
+class ConvergenceResult:
+    """Result of a convergence/trend check on the welfare time-series."""
+    converged: bool
+    trend: str          # "stable" | "rising" | "falling" | "oscillating" | "collapse" | "unknown"
+    confidence: float   # 0.0–1.0
+    rounds_observed: int
+    message: str
+
+
+@dataclass
 class RoundStatistics:
     round_num: int = 0
 
@@ -244,6 +254,91 @@ class StatisticsTracker:
             return "capture_in_progress"
 
         return "mixed_unstable"
+
+    def check_convergence(self, min_rounds: int = 10, window: int = 7) -> ConvergenceResult:
+        """Check whether the simulation has reached a classifiable attractor.
+
+        Looks at the welfare time-series over the last `window` rounds and
+        returns a ConvergenceResult classifying the trend once it is clear.
+        The caller should stop early only when `converged=True`.
+        """
+        n = len(self.history)
+        if n < min_rounds:
+            return ConvergenceResult(
+                False, "unknown", 0.0, n,
+                f"Only {n} rounds — need ≥{min_rounds} before assessing"
+            )
+
+        recent = self.history[-min(window, n):]
+        welfare   = [s.welfare_score           for s in recent]
+        integrity = [s.institutional_integrity for s in recent]
+        w = len(welfare)
+
+        # ── Collapse: welfare rock-bottom for 3 consecutive rounds ──────
+        if n >= 3 and all(s.welfare_score < 0.10 for s in self.history[-3:]):
+            return ConvergenceResult(
+                True, "collapse", 0.95, n,
+                f"Welfare collapsed below 0.10 for 3+ rounds"
+            )
+
+        # ── Oscillation: round-to-round differences alternate sign ──────
+        diffs = [welfare[i + 1] - welfare[i] for i in range(w - 1)]
+        if len(diffs) >= 4:
+            sign_changes = sum(
+                1 for i in range(len(diffs) - 1)
+                if diffs[i] * diffs[i + 1] < 0
+            )
+            osc_ratio    = sign_changes / max(len(diffs) - 1, 1)
+            welfare_range = max(welfare) - min(welfare)
+            if osc_ratio >= 0.70 and welfare_range > 0.02:
+                return ConvergenceResult(
+                    True, "oscillating", min(0.90, osc_ratio), n,
+                    f"Welfare oscillating (range={welfare_range:.3f}, alternation={osc_ratio:.0%})"
+                )
+
+        # ── Linear regression on welfare ────────────────────────────────
+        x_mean = (w - 1) / 2.0
+        y_mean = sum(welfare) / w
+        xy_cov = sum((i - x_mean) * (welfare[i] - y_mean) for i in range(w))
+        x_var  = sum((i - x_mean) ** 2 for i in range(w))
+        slope  = xy_cov / x_var if x_var > 0 else 0.0
+
+        y_pred = [y_mean + slope * (i - x_mean) for i in range(w)]
+        ss_res = sum((welfare[i] - y_pred[i]) ** 2 for i in range(w))
+        ss_tot = sum((welfare[i] - y_mean) ** 2 for i in range(w))
+        r_sq   = 1.0 - ss_res / ss_tot if ss_tot > 0.001 else 1.0
+
+        welfare_var = ss_tot / w
+        int_mean    = sum(integrity) / w
+        int_var     = sum((v - int_mean) ** 2 for v in integrity) / w
+
+        # ── Stable: flat + low variance on both welfare and integrity ───
+        if abs(slope) < 0.005 and welfare_var < 0.0015 and int_var < 0.005:
+            return ConvergenceResult(
+                True, "stable", 0.90, n,
+                f"Welfare stable at {y_mean:.3f} ± {welfare_var**0.5:.3f}"
+            )
+
+        # ── Strong directional trend ─────────────────────────────────────
+        if r_sq > 0.80 and abs(slope) > 0.008:
+            trend = "rising" if slope > 0 else "falling"
+            return ConvergenceResult(
+                True, trend, min(0.95, r_sq), n,
+                f"Welfare {trend} at {slope:+.4f}/round (R²={r_sq:.2f})"
+            )
+
+        # ── Weaker but consistent trend after enough rounds ─────────────
+        if r_sq > 0.60 and abs(slope) > 0.005 and n >= 15:
+            trend = "rising" if slope > 0 else "falling"
+            return ConvergenceResult(
+                True, trend, r_sq, n,
+                f"Welfare trending {trend} (R²={r_sq:.2f}, slope={slope:+.4f})"
+            )
+
+        return ConvergenceResult(
+            False, "unknown", 0.0, n,
+            f"Trend unclear — R²={r_sq:.2f}, slope={slope:+.4f}, var={welfare_var:.4f}"
+        )
 
     @staticmethod
     def _compute_gini(values: list) -> float:

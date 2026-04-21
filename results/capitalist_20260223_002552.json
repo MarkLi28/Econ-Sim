@@ -1,0 +1,4604 @@
+{
+  "run_id": "20260223_002552",
+  "regime": "mixed_unstable",
+  "axes": {
+    "coordination_mechanism": 0.1,
+    "planning_structure": 0.2,
+    "meta_game_constraint": 0.1,
+    "system_label": "capitalist"
+  },
+  "summary": {
+    "final_welfare": 0.25594606004099224,
+    "final_integrity": 1.0,
+    "final_gini": 0.31154278990553685,
+    "final_unemployment": 0.75,
+    "final_needs_rate": 0.0,
+    "total_suffering": 50.47589743589744,
+    "integrity_trend": 0.6335128617363344,
+    "welfare_trend": -0.34267485779027335
+  },
+  "time_series": {
+    "gdp": [
+      0.0,
+      115.6,
+      18.207000000000008,
+      39.389,
+      40.225315,
+      59.22344400000001,
+      191.52244725,
+      44.61081624999999,
+      93.69736793749999,
+      37.45,
+      43.5375,
+      54.783774434343435,
+      10.25,
+      157.6833518324462,
+      6.2579738626875
+    ],
+    "unemployment": [
+      0.0,
+      0.5,
+      0.25,
+      0.75,
+      0.25,
+      0.5,
+      0.0,
+      0.25,
+      0.75,
+      0.25,
+      0.75,
+      0.25,
+      0.75,
+      0.25,
+      0.75
+    ],
+    "gini": [
+      0.2879483286749378,
+      0.2673739870301172,
+      0.23918143135406092,
+      0.22155805694462558,
+      0.20361595666069093,
+      0.19043375621019654,
+      0.1624975152819502,
+      0.14768606153787417,
+      0.14212219685707259,
+      0.1446093540068998,
+      0.1557487278548864,
+      0.20177345780395275,
+      0.22946033865951684,
+      0.2737346921246576,
+      0.31154278990553685
+    ],
+    "welfare_score": [
+      0.5986209178312656,
+      0.4185610241106379,
+      0.4310497286242053,
+      0.37062150889337137,
+      0.47782357579136625,
+      0.4280274996459508,
+      0.8630470067487407,
+      0.455092345885517,
+      0.39359173398921005,
+      0.4595544975362474,
+      0.3459479795775404,
+      0.4921277495667083,
+      0.2788478709455743,
+      0.5132011564349817,
+      0.25594606004099224
+    ],
+    "basic_needs_rate": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_suffering": [
+      4.0,
+      8.0,
+      12.0,
+      16.0,
+      20.0,
+      24.0,
+      24.0,
+      28.0,
+      31.333333333333336,
+      34.00833333333333,
+      37.54833333333333,
+      40.34833333333333,
+      43.717564102564104,
+      46.47589743589744,
+      50.47589743589744
+    ],
+    "institutional_integrity": [
+      0.3664871382636656,
+      0.431180480113458,
+      0.5007681634840289,
+      0.571052521171949,
+      0.6421044791468683,
+      0.7212298156695649,
+      0.8009702030145179,
+      0.8809702030145179,
+      0.9608001292416315,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lobby_spending": [
+      390.0,
+      300.0,
+      240.0,
+      260.0,
+      273.0,
+      30.0,
+      10.0,
+      0.0,
+      8.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      55.0,
+      10.0
+    ],
+    "industry_gdp": [
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 115.6,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 18.207000000000008,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 39.389,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 40.225315,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 59.22344400000001,
+        "housing": 0.0,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 61.879999999999995,
+        "manufacturing": 50.44918725,
+        "housing": 79.19326000000001,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 33.58581624999999,
+        "housing": 0.0,
+        "technology": 11.024999999999999
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 5.733367937499997,
+        "housing": 87.964,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 26.5,
+        "technology": 10.950000000000003
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 14.443750000000001,
+        "technology": 29.09375
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 21.048249191919194,
+        "technology": 33.735525242424245
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 10.25,
+        "technology": 0.0
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 0.0,
+        "housing": 121.20947123543125,
+        "technology": 36.47388059701493
+      },
+      {
+        "agriculture": 0.0,
+        "manufacturing": 5.6329738626875,
+        "housing": 0.0,
+        "technology": 0.625
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "institutional_integrity": 0.3664871382636656,
+      "statistics": {
+        "round_num": 1,
+        "gdp": 0.0,
+        "gdp_growth": 0.0,
+        "unemployment_rate": 0.0,
+        "avg_wage": 55.0,
+        "avg_price": 15.666666666666666,
+        "inflation": 0.0,
+        "gini": 0.2879483286749378,
+        "total_production": 13.6,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 22.0,
+        "government_treasury": 353.04,
+        "fiscal_health": 0.70608,
+        "welfare_score": 0.5986209178312656,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 4.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.3664871382636656,
+        "total_lobby_spending": 390.0,
+        "num_workers": 4,
+        "num_employed": 4,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": -110.0,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": -110.0,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 116.74000000000001,
+          "Worker_Mid_Skill": 156.74,
+          "Worker_High_Skill": 206.74,
+          "Worker_Precarious": 86.74000000000001
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 2,
+          "housing": 0,
+          "technology": 2
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 14.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.1,
+        "corporate_tax_rate": 0.0786,
+        "spending": {
+          "infrastructure": 60.0,
+          "transfers_to_workers": 28.96,
+          "subsidies_to_firms": 80.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": 8.0,
+            "subsidy": 25.0,
+            "regulation_strength": 0.1
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": 8.0,
+            "subsidy": 15.0,
+            "regulation_strength": 0.1
+          },
+          "HOUSING": {
+            "price_cap": 30.0,
+            "wage_floor": 8.0,
+            "subsidy": 25.0,
+            "regulation_strength": 0.15
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": 8.0,
+            "subsidy": 15.0,
+            "regulation_strength": 0.1
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 1000.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 950.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 12.0,
+          "wage": 55.0,
+          "capital": 810.0,
+          "inventory": 13.6,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 110.0,
+          "profit": -110.0,
+          "lobby_spending": 80.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 12.0,
+          "wage": 55.0,
+          "capital": 920.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 80.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 52.0,
+          "capital": 970.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 30.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 52.0,
+          "capital": 950.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 14.0,
+          "wage": 55.0,
+          "capital": 840.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 110.0,
+          "profit": -110.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 14.0,
+          "wage": 55.0,
+          "capital": 950.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 55.0,
+          "savings": 116.74000000000001,
+          "suffering_score": 1.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 55.0,
+          "savings": 156.74,
+          "suffering_score": 1.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Technology_Firm_1",
+          "industry": "technology",
+          "wage": 55.0,
+          "savings": 206.74,
+          "suffering_score": 1.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": "Technology_Firm_1",
+          "industry": "technology",
+          "wage": 55.0,
+          "savings": 86.74000000000001,
+          "suffering_score": 1.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Manufacturing_Firm_1",
+          "Worker_Low_Skill": "Manufacturing_Firm_1",
+          "Worker_High_Skill": "Technology_Firm_1",
+          "Worker_Precarious": "Technology_Firm_1"
+        },
+        "unemployed": []
+      }
+    },
+    {
+      "round": 2,
+      "institutional_integrity": 0.431180480113458,
+      "statistics": {
+        "round_num": 2,
+        "gdp": 115.6,
+        "gdp_growth": 0.0,
+        "unemployment_rate": 0.5,
+        "avg_wage": 68.0,
+        "avg_price": 15.75,
+        "inflation": 0.005319148936170251,
+        "gini": 0.2673739870301172,
+        "total_production": 2.040000000000001,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 18.778295659163987,
+        "government_treasury": 177.02260434083604,
+        "fiscal_health": 0.35404520868167205,
+        "welfare_score": 0.4185610241106379,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 8.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.431180480113458,
+        "total_lobby_spending": 300.0,
+        "num_workers": 4,
+        "num_employed": 2,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 115.6,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": -115.6,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": -136.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 127.938922829582,
+          "Worker_Mid_Skill": 230.498922829582,
+          "Worker_High_Skill": 280.498922829582,
+          "Worker_Precarious": 97.938922829582
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 115.6,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 0,
+          "technology": 2
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 14.25
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.08,
+        "corporate_tax_rate": 0.06832435691318328,
+        "spending": {
+          "infrastructure": 30.0,
+          "transfers_to_workers": 44.795691318327975,
+          "subsidies_to_firms": 120.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": 10.0,
+            "subsidy": 50.0,
+            "regulation_strength": 0.05
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": 8.0,
+            "subsidy": 5.0,
+            "regulation_strength": 0.1
+          },
+          "HOUSING": {
+            "price_cap": 28.0,
+            "wage_floor": 10.0,
+            "subsidy": 55.0,
+            "regulation_strength": 0.1
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": 8.0,
+            "subsidy": 10.0,
+            "regulation_strength": 0.1
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 56.0,
+          "capital": 920.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 80.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 55.0,
+          "capital": 950.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 13.0,
+          "wage": 55.0,
+          "capital": 872.701704340836,
+          "inventory": 2.040000000000001,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 115.6,
+          "costs": 0.0,
+          "profit": 115.6,
+          "lobby_spending": 45.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 12.0,
+          "wage": 65.0,
+          "capital": 880.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 40.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 58.0,
+          "capital": 829.4,
+          "inventory": 0.0,
+          "input_inventory": 11.559999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 115.6,
+          "profit": -115.6,
+          "lobby_spending": 25.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 58.0,
+          "capital": 920.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 30.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 13.5,
+          "wage": 55.0,
+          "capital": 800.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 40.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 15.0,
+          "wage": 68.0,
+          "capital": 774.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 136.0,
+          "profit": -136.0,
+          "lobby_spending": 40.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 127.938922829582,
+          "suffering_score": 2.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Technology_Firm_2",
+          "industry": "technology",
+          "wage": 68.0,
+          "savings": 230.498922829582,
+          "suffering_score": 2.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Technology_Firm_2",
+          "industry": "technology",
+          "wage": 68.0,
+          "savings": 280.498922829582,
+          "suffering_score": 2.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 97.938922829582,
+          "suffering_score": 2.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Technology_Firm_2",
+          "Worker_Mid_Skill": "Technology_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Low_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 3,
+      "institutional_integrity": 0.5007681634840289,
+      "statistics": {
+        "round_num": 3,
+        "gdp": 18.207000000000008,
+        "gdp_growth": -0.8424999999999999,
+        "unemployment_rate": 0.25,
+        "avg_wage": 72.0,
+        "avg_price": 15.75,
+        "inflation": 0.0,
+        "gini": 0.23918143135406092,
+        "total_production": 11.254000000000001,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 11.451437575035644,
+        "government_treasury": 39.85043231360251,
+        "fiscal_health": 0.07970086462720502,
+        "welfare_score": 0.4310497286242053,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 12.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.5007681634840289,
+        "total_lobby_spending": 240.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": -125.79299999999999,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": -18.207000000000008,
+          "Housing_Firm_2": -72.0,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 137.5948252301493,
+          "Worker_Mid_Skill": 308.5548252301493,
+          "Worker_High_Skill": 358.5548252301493,
+          "Worker_Precarious": 175.99482523014927
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 18.207000000000008,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 2,
+          "housing": 1,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 14.25
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.03577951200283645,
+        "spending": {
+          "infrastructure": 10.0,
+          "transfers_to_workers": 38.62360960226916,
+          "subsidies_to_firms": 100.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": 5.0,
+            "subsidy": 45.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": 5.0,
+            "subsidy": 5.0,
+            "regulation_strength": 0.1
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": 5.0,
+            "subsidy": 45.0,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": 5.0,
+            "subsidy": 5.0,
+            "regulation_strength": 0.1
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 68.0,
+          "capital": 920.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 68.0,
+          "capital": 890.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 60.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 13.0,
+          "wage": 72.0,
+          "capital": 711.2572667658004,
+          "inventory": 11.254000000000001,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 18.207000000000008,
+          "costs": 144.0,
+          "profit": -125.79299999999999,
+          "lobby_spending": 35.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 12.0,
+          "wage": 70.0,
+          "capital": 865.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 15.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 72.0,
+          "capital": 791.193,
+          "inventory": 0.0,
+          "input_inventory": 13.293999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 18.207000000000008,
+          "profit": -18.207000000000008,
+          "lobby_spending": 20.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 72.0,
+          "capital": 808.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 0.0,
+          "costs": 72.0,
+          "profit": -72.0,
+          "lobby_spending": 40.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 14.0,
+          "wage": 72.0,
+          "capital": 765.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 35.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 14.5,
+          "wage": 60.0,
+          "capital": 739.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 35.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 137.5948252301493,
+          "suffering_score": 3.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 72.0,
+          "savings": 308.5548252301493,
+          "suffering_score": 3.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 72.0,
+          "savings": 358.5548252301493,
+          "suffering_score": 3.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": "Housing_Firm_2",
+          "industry": "housing",
+          "wage": 72.0,
+          "savings": 175.99482523014927,
+          "suffering_score": 3.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Manufacturing_Firm_1",
+          "Worker_Mid_Skill": "Manufacturing_Firm_1",
+          "Worker_Precarious": "Housing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Low_Skill"
+        ]
+      }
+    },
+    {
+      "round": 4,
+      "institutional_integrity": 0.571052521171949,
+      "statistics": {
+        "round_num": 4,
+        "gdp": 39.389,
+        "gdp_growth": 1.1633986928104567,
+        "unemployment_rate": 0.75,
+        "avg_wage": 80.0,
+        "avg_price": 15.333333333333334,
+        "inflation": -0.02645502645502642,
+        "gini": 0.22155805694462558,
+        "total_production": 9.5642,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 3.2867063578720863,
+        "government_treasury": 5.055115647638765,
+        "fiscal_health": 0.010110231295277529,
+        "welfare_score": 0.37062150889337137,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 16.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.571052521171949,
+        "total_lobby_spending": 260.0,
+        "num_workers": 4,
+        "num_employed": 1,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 39.389,
+          "Manufacturing_Firm_2": -80.0,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": -39.389,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 139.36663581401888,
+          "Worker_Mid_Skill": 310.32663581401886,
+          "Worker_High_Skill": 437.9266358140188,
+          "Worker_Precarious": 177.76663581401885
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 39.389,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 1,
+          "housing": 0,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 13.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.03,
+        "corporate_tax_rate": 0.022511522452260433,
+        "spending": {
+          "infrastructure": 0.0,
+          "transfers_to_workers": 7.08724233547832,
+          "subsidies_to_firms": 30.99478068835751
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 18.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.05
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 17.0,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.05
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 810.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 110.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 72.0,
+          "capital": 890.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 8.0,
+          "wage": 68.0,
+          "capital": 729.7595604079283,
+          "inventory": 3.3762000000000008,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 39.389,
+          "costs": 0.0,
+          "profit": 39.389,
+          "lobby_spending": 20.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 11.5,
+          "wage": 80.0,
+          "capital": 785.0,
+          "inventory": 6.188,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 0.0,
+          "costs": 80.0,
+          "profit": -80.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 75.0,
+          "capital": 781.193,
+          "inventory": 0.0,
+          "input_inventory": 13.293999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 10.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 74.0,
+          "capital": 748.611,
+          "inventory": 0.0,
+          "input_inventory": 7.877800000000001,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 39.389,
+          "profit": -39.389,
+          "lobby_spending": 20.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 13.0,
+          "wage": 72.0,
+          "capital": 715.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 13.0,
+          "wage": 73.0,
+          "capital": 689.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 139.36663581401888,
+          "suffering_score": 4.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 310.32663581401886,
+          "suffering_score": 4.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 80.0,
+          "savings": 437.9266358140188,
+          "suffering_score": 4.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 177.76663581401885,
+          "suffering_score": 4.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Manufacturing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Mid_Skill",
+          "Worker_Low_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 5,
+      "institutional_integrity": 0.6421044791468683,
+      "statistics": {
+        "round_num": 5,
+        "gdp": 40.225315,
+        "gdp_growth": 0.021232196806214906,
+        "unemployment_rate": 0.25,
+        "avg_wage": 83.0,
+        "avg_price": 15.0,
+        "inflation": -0.021739130434782646,
+        "gini": 0.20361595666069093,
+        "total_production": 17.318070000000002,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 13.081960825456859,
+        "government_treasury": 13.329775581141304,
+        "fiscal_health": 0.026659551162282608,
+        "welfare_score": 0.47782357579136625,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 20.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.6421044791468683,
+        "total_lobby_spending": 273.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": -236.930085,
+          "Manufacturing_Firm_2": 28.1554,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": -40.225315,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 218.5157618142148,
+          "Worker_Mid_Skill": 389.4757618142148,
+          "Worker_High_Skill": 517.0757618142147,
+          "Worker_Precarious": 178.0657618142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 40.225315,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 3,
+          "housing": 0,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 12.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.015710525211719492,
+        "spending": {
+          "infrastructure": 0.0,
+          "transfers_to_workers": 1.1965040007837753,
+          "subsidies_to_firms": 3.6107968911705464
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.5,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 80.0,
+          "capital": 810.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 100.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 9.0,
+          "wage": 83.0,
+          "capital": 482.6398507040176,
+          "inventory": 15.461670000000002,
+          "input_inventory": 0.0,
+          "num_employees": 3,
+          "revenue": 12.069915000000004,
+          "costs": 249.0,
+          "profit": -236.930085,
+          "lobby_spending": 10.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 7.5,
+          "wage": 72.0,
+          "capital": 792.7130638784539,
+          "inventory": 1.8563999999999998,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 28.1554,
+          "costs": 0.0,
+          "profit": 28.1554,
+          "lobby_spending": 20.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 82.0,
+          "capital": 773.193,
+          "inventory": 0.0,
+          "input_inventory": 13.293999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 8.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 83.0,
+          "capital": 693.385685,
+          "inventory": 0.0,
+          "input_inventory": 14.40393,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 40.225315,
+          "profit": -40.225315,
+          "lobby_spending": 15.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 12.0,
+          "wage": 75.0,
+          "capital": 655.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 60.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 12.0,
+          "wage": 81.0,
+          "capital": 629.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 60.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 83.0,
+          "savings": 218.5157618142148,
+          "suffering_score": 5.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 83.0,
+          "savings": 389.4757618142148,
+          "suffering_score": 5.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 83.0,
+          "savings": 517.0757618142147,
+          "suffering_score": 5.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 178.0657618142148,
+          "suffering_score": 5.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Manufacturing_Firm_1",
+          "Worker_Mid_Skill": "Manufacturing_Firm_1",
+          "Worker_Low_Skill": "Manufacturing_Firm_1"
+        },
+        "unemployed": [
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 6,
+      "institutional_integrity": 0.7212298156695649,
+      "statistics": {
+        "round_num": 6,
+        "gdp": 59.22344400000001,
+        "gdp_growth": 0.47229285836543494,
+        "unemployment_rate": 0.5,
+        "avg_wage": 80.0,
+        "avg_price": 15.166666666666666,
+        "inflation": 0.011111111111111072,
+        "gini": 0.19043375621019654,
+        "total_production": 14.504434,
+        "total_consumer_spending": 0.0,
+        "tax_revenue": 9.77670332,
+        "government_treasury": 10.106478901141301,
+        "fiscal_health": 0.0202129578022826,
+        "welfare_score": 0.4280274996459508,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 24.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.7212298156695649,
+        "total_lobby_spending": 30.0,
+        "num_workers": 4,
+        "num_employed": 2,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": -15.52265599999999,
+          "Manufacturing_Firm_2": -85.2539,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": -20.0,
+          "Technology_Firm_1": -39.22344400000001,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 219.5157618142148,
+          "Worker_Mid_Skill": 452.2257618142148,
+          "Worker_High_Skill": 608.3257618142147,
+          "Worker_Precarious": 179.0657618142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 59.22344400000001,
+          "housing": 0.0,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 2,
+          "housing": 0,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 25.0,
+          "technology": 12.5
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.03,
+        "spending": {
+          "infrastructure": 1.0,
+          "transfers_to_workers": 4.0,
+          "subsidies_to_firms": 8.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 5.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.05
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 3.0,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 45.0,
+          "capital": 810.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 6.0,
+          "wage": 65.0,
+          "capital": 465.63287438401755,
+          "inventory": 7.852333999999999,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 49.47734400000001,
+          "costs": 65.0,
+          "profit": -15.52265599999999,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 8.5,
+          "wage": 95.0,
+          "capital": 707.1667808784539,
+          "inventory": 6.6521,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 9.746099999999998,
+          "costs": 95.0,
+          "profit": -85.2539,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 87.0,
+          "capital": 773.193,
+          "inventory": 0.0,
+          "input_inventory": 13.293999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 25.0,
+          "wage": 92.0,
+          "capital": 673.385685,
+          "inventory": 0.0,
+          "input_inventory": 19.403930000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 20.0,
+          "profit": -20.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 14.0,
+          "wage": 90.0,
+          "capital": 600.776556,
+          "inventory": 0.0,
+          "input_inventory": 8.761636000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 39.22344400000001,
+          "profit": -39.22344400000001,
+          "lobby_spending": 15.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 11.0,
+          "wage": 84.0,
+          "capital": 614.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 15.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 219.5157618142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 65.0,
+          "savings": 452.2257618142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 95.0,
+          "savings": 608.3257618142147,
+          "suffering_score": 6.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 179.0657618142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Manufacturing_Firm_1",
+          "Worker_High_Skill": "Manufacturing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Low_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 7,
+      "institutional_integrity": 0.8009702030145179,
+      "statistics": {
+        "round_num": 7,
+        "gdp": 191.52244725,
+        "gdp_growth": 2.2338958073765514,
+        "unemployment_rate": 0.0,
+        "avg_wage": 87.0,
+        "avg_price": 14.166666666666666,
+        "inflation": -0.06593406593406594,
+        "gini": 0.1624975152819502,
+        "total_production": 148.20456986363638,
+        "total_consumer_spending": 141.07326,
+        "tax_revenue": 17.750448945000002,
+        "government_treasury": 18.356927846141303,
+        "fiscal_health": 0.03671385569228261,
+        "welfare_score": 0.8630470067487407,
+        "basic_needs_fulfillment_rate": 1.0,
+        "total_suffering": 24.0,
+        "aggregate_suffering_delta": 0.0,
+        "institutional_integrity": 0.8009702030145179,
+        "total_lobby_spending": 10.0,
+        "num_workers": 4,
+        "num_employed": 4,
+        "firm_profits": {
+          "Agriculture_Firm_1": -18.120000000000005,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 26.50162725,
+          "Manufacturing_Firm_2": -54.05244,
+          "Housing_Firm_1": -110.80674,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": -50.0,
+          "Technology_Firm_2": -0.44918725000000137
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 267.4207618142148,
+          "Worker_Mid_Skill": 492.2133618142148,
+          "Worker_High_Skill": 667.6257618142147,
+          "Worker_Precarious": 230.8799018142148
+        },
+        "industry_gdp": {
+          "agriculture": 61.879999999999995,
+          "manufacturing": 50.44918725,
+          "housing": 79.19326000000001,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 1,
+          "manufacturing": 1,
+          "housing": 2,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 23.0,
+          "technology": 11.5
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.04,
+        "corporate_tax_rate": 0.02,
+        "spending": {
+          "infrastructure": 1.5,
+          "transfers_to_workers": 6.0,
+          "subsidies_to_firms": 2.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 80.0,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 61.879999999999995,
+          "costs": 80.0,
+          "profit": -18.120000000000005,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 6.5,
+          "wage": 75.0,
+          "capital": 491.6044690890176,
+          "inventory": 1.9630834999999998,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 26.50162725,
+          "costs": 0.0,
+          "profit": 26.50162725,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 5.0,
+          "wage": 78.0,
+          "capital": 652.635389678454,
+          "inventory": 3.710419999999999,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 23.947560000000003,
+          "costs": 78.0,
+          "profit": -54.05244,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 22.0,
+          "wage": 95.0,
+          "capital": 660.8023948,
+          "inventory": 1.457806363636363,
+          "input_inventory": 11.270999999999999,
+          "num_employees": 2,
+          "revenue": 79.19326,
+          "costs": 190.0,
+          "profit": -110.80674,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 24.0,
+          "wage": 95.0,
+          "capital": 673.385685,
+          "inventory": 0.0,
+          "input_inventory": 19.403930000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 12.0,
+          "wage": 95.0,
+          "capital": 545.776556,
+          "inventory": 0.0,
+          "input_inventory": 19.872747111111114,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 50.0,
+          "profit": -50.0,
+          "lobby_spending": 5.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 11.0,
+          "wage": 82.0,
+          "capital": 608.55081275,
+          "inventory": 0.0,
+          "input_inventory": 0.0998193888888892,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.44918725000000137,
+          "profit": -0.44918725000000137,
+          "lobby_spending": 5.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Housing_Firm_1",
+          "industry": "housing",
+          "wage": 95.0,
+          "savings": 267.4207618142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 1.0,
+          "food_consumed": 1.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Housing_Firm_1",
+          "industry": "housing",
+          "wage": 95.0,
+          "savings": 492.2133618142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 1.0,
+          "food_consumed": 1.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "wage": 80.0,
+          "savings": 667.6257618142147,
+          "suffering_score": 6.0,
+          "productivity_modifier": 1.0,
+          "food_consumed": 1.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 78.0,
+          "savings": 230.8799018142148,
+          "suffering_score": 6.0,
+          "productivity_modifier": 1.0,
+          "food_consumed": 1.0,
+          "shelter_consumed": 0.5
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Agriculture_Firm_1",
+          "Worker_Precarious": "Manufacturing_Firm_2",
+          "Worker_Mid_Skill": "Housing_Firm_1",
+          "Worker_Low_Skill": "Housing_Firm_1"
+        },
+        "unemployed": []
+      }
+    },
+    {
+      "round": 8,
+      "institutional_integrity": 0.8809702030145179,
+      "statistics": {
+        "round_num": 8,
+        "gdp": 44.61081624999999,
+        "gdp_growth": -0.7670726492348536,
+        "unemployment_rate": 0.25,
+        "avg_wage": 101.66666666666667,
+        "avg_price": 14.166666666666666,
+        "inflation": 0.0,
+        "gini": 0.14768606153787417,
+        "total_production": 24.140500686363634,
+        "total_consumer_spending": 11.024999999999999,
+        "tax_revenue": 17.4805408125,
+        "government_treasury": 26.8374686586413,
+        "fiscal_health": 0.053674937317282595,
+        "welfare_score": 0.455092345885517,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 28.0,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 0.8809702030145179,
+        "total_lobby_spending": 0.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 6.870792249999998,
+          "Manufacturing_Firm_2": 26.715023999999996,
+          "Housing_Firm_1": -190.0,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": -103.975,
+          "Technology_Firm_2": -33.58581624999999
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 366.6457618142148,
+          "Worker_Mid_Skill": 583.4633618142147,
+          "Worker_High_Skill": 668.6257618142147,
+          "Worker_Precarious": 322.1299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 33.58581624999999,
+          "housing": 0.0,
+          "technology": 11.024999999999999
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 2,
+          "technology": 1
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 22.5,
+          "technology": 12.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 3.0,
+          "transfers_to_workers": 4.0,
+          "subsidies_to_firms": 2.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.05
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.05
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.05
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 65.0,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 5.5,
+          "wage": 92.0,
+          "capital": 498.1317217265176,
+          "inventory": 0.5889250500000001,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 6.870792249999998,
+          "costs": 0.0,
+          "profit": 6.870792249999998,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 7.0,
+          "wage": 92.0,
+          "capital": 678.0146624784539,
+          "inventory": 0.37104199999999965,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 26.715023999999996,
+          "costs": 0.0,
+          "profit": 26.715023999999996,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 23.0,
+          "wage": 95.0,
+          "capital": 470.8023948,
+          "inventory": 8.957806363636363,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 190.0,
+          "profit": -190.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 22.0,
+          "wage": 98.0,
+          "capital": 673.385685,
+          "inventory": 0.0,
+          "input_inventory": 19.403930000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 11.0,
+          "wage": 115.0,
+          "capital": 441.250306,
+          "inventory": 3.1977272727272723,
+          "input_inventory": 18.612747111111112,
+          "num_employees": 1,
+          "revenue": 11.024999999999999,
+          "costs": 115.0,
+          "profit": -103.975,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 13.0,
+          "wage": 100.0,
+          "capital": 574.9649965,
+          "inventory": 0.0,
+          "input_inventory": 4.813355838888889,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 33.58581624999999,
+          "profit": -33.58581624999999,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Technology_Firm_1",
+          "industry": "technology",
+          "wage": 115.0,
+          "savings": 366.6457618142148,
+          "suffering_score": 7.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Housing_Firm_1",
+          "industry": "housing",
+          "wage": 95.0,
+          "savings": 583.4633618142147,
+          "suffering_score": 7.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 668.6257618142147,
+          "suffering_score": 7.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": "Housing_Firm_1",
+          "industry": "housing",
+          "wage": 95.0,
+          "savings": 322.1299018142148,
+          "suffering_score": 7.0,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Housing_Firm_1",
+          "Worker_Precarious": "Housing_Firm_1",
+          "Worker_Low_Skill": "Technology_Firm_1"
+        },
+        "unemployed": [
+          "Worker_High_Skill"
+        ]
+      }
+    },
+    {
+      "round": 9,
+      "institutional_integrity": 0.9608001292416315,
+      "statistics": {
+        "round_num": 9,
+        "gdp": 93.69736793749999,
+        "gdp_growth": 1.1003284811561815,
+        "unemployment_rate": 0.75,
+        "avg_wage": 110.0,
+        "avg_price": 13.25,
+        "inflation": -0.06470588235294114,
+        "gini": 0.14212219685707259,
+        "total_production": 101.58642810997475,
+        "total_consumer_spending": 87.964,
+        "tax_revenue": 6.27394735875,
+        "government_treasury": 20.6114160173913,
+        "fiscal_health": 0.0412228320347826,
+        "welfare_score": 0.39359173398921005,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 31.333333333333336,
+        "aggregate_suffering_delta": 3.3333333333333357,
+        "institutional_integrity": 0.9608001292416315,
+        "total_lobby_spending": 8.0,
+        "num_workers": 4,
+        "num_employed": 1,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 2.2084689375,
+          "Manufacturing_Firm_2": -106.47510100000001,
+          "Housing_Firm_1": 87.964,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": -5.733367937499997
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 366.6457618142148,
+          "Worker_Mid_Skill": 583.4633618142147,
+          "Worker_High_Skill": 694.2617618142147,
+          "Worker_Precarious": 322.1299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 5.733367937499997,
+          "housing": 87.964,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 1,
+          "housing": 0,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 20.0,
+          "technology": 11.75
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.04,
+        "corporate_tax_rate": 0.02,
+        "spending": {
+          "infrastructure": 1.5,
+          "transfers_to_workers": 8.0,
+          "subsidies_to_firms": 3.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 75.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 6.0,
+          "wage": 102.0,
+          "capital": 500.2960212852676,
+          "inventory": 0.14723126250000002,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 2.2084689375,
+          "costs": 0.0,
+          "profit": 2.2084689375,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 8.0,
+          "wage": 110.0,
+          "capital": 563.4690634984539,
+          "inventory": 6.2065521,
+          "input_inventory": 0.0,
+          "num_employees": 1,
+          "revenue": 3.5248989999999965,
+          "costs": 110.0,
+          "profit": -106.47510100000001,
+          "lobby_spending": 8.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 18.0,
+          "wage": 95.0,
+          "capital": 557.0071148,
+          "inventory": 4.070917474747476,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 87.964,
+          "costs": 0.0,
+          "profit": 87.964,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 22.0,
+          "wage": 105.0,
+          "capital": 673.385685,
+          "inventory": 0.0,
+          "input_inventory": 19.403930000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 13.0,
+          "wage": 100.0,
+          "capital": 441.250306,
+          "inventory": 3.1977272727272723,
+          "input_inventory": 18.612747111111112,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 10.5,
+          "wage": 105.0,
+          "capital": 569.2316285625,
+          "inventory": 0.0,
+          "input_inventory": 5.607539526388888,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 5.733367937499997,
+          "profit": -5.733367937499997,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 366.6457618142148,
+          "suffering_score": 7.911111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.1111111111111111
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 583.4633618142147,
+          "suffering_score": 7.911111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.1111111111111111
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 110.0,
+          "savings": 694.2617618142147,
+          "suffering_score": 7.6,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 322.1299018142148,
+          "suffering_score": 7.911111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.1111111111111111
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Manufacturing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Mid_Skill",
+          "Worker_Precarious",
+          "Worker_Low_Skill"
+        ]
+      }
+    },
+    {
+      "round": 10,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 10,
+        "gdp": 37.45,
+        "gdp_growth": -0.6003089433101184,
+        "unemployment_rate": 0.25,
+        "avg_wage": 115.0,
+        "avg_price": 12.0,
+        "inflation": -0.09433962264150944,
+        "gini": 0.1446093540068998,
+        "total_production": 57.90067810997475,
+        "total_consumer_spending": 37.45,
+        "tax_revenue": 0.0,
+        "government_treasury": 3.6114160173912992,
+        "fiscal_health": 0.007222832034782599,
+        "welfare_score": 0.4595544975362474,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 34.00833333333333,
+        "aggregate_suffering_delta": 2.674999999999997,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 0.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": -230.0,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": 26.5,
+          "Housing_Firm_2": -115.0,
+          "Technology_Firm_1": 10.950000000000003,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 476.1457618142148,
+          "Worker_Mid_Skill": 692.9633618142147,
+          "Worker_High_Skill": 694.2617618142147,
+          "Worker_Precarious": 420.6799018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 26.5,
+          "technology": 10.950000000000003
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 2,
+          "housing": 1,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 18.0,
+          "technology": 10.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.0,
+        "corporate_tax_rate": 0.0,
+        "spending": {
+          "infrastructure": 1.0,
+          "transfers_to_workers": 10.0,
+          "subsidies_to_firms": 6.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 4.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 7.0,
+          "wage": 115.0,
+          "capital": 270.2960212852676,
+          "inventory": 8.239231262499999,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 230.0,
+          "profit": -230.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 5.0,
+          "wage": 95.0,
+          "capital": 563.4690634984539,
+          "inventory": 6.2065521,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 16.0,
+          "wage": 100.0,
+          "capital": 583.5071148,
+          "inventory": 2.4146674747474757,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 26.5,
+          "costs": 0.0,
+          "profit": 26.5,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 20.0,
+          "wage": 115.0,
+          "capital": 558.385685,
+          "inventory": 1.4874999999999998,
+          "input_inventory": 18.808930000000004,
+          "num_employees": 1,
+          "revenue": 0.0,
+          "costs": 115.0,
+          "profit": -115.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 10.0,
+          "wage": 115.0,
+          "capital": 452.200306,
+          "inventory": 2.102727272727272,
+          "input_inventory": 18.612747111111112,
+          "num_employees": 0,
+          "revenue": 10.950000000000003,
+          "costs": 0.0,
+          "profit": 10.950000000000003,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 10.0,
+          "wage": 112.0,
+          "capital": 569.2316285625,
+          "inventory": 0.0,
+          "input_inventory": 5.607539526388888,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 115.0,
+          "savings": 476.1457618142148,
+          "suffering_score": 8.511111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "wage": 115.0,
+          "savings": 692.9633618142147,
+          "suffering_score": 8.511111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 694.2617618142147,
+          "suffering_score": 8.475,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.15625
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": "Housing_Firm_2",
+          "industry": "housing",
+          "wage": 115.0,
+          "savings": 420.6799018142148,
+          "suffering_score": 8.511111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Manufacturing_Firm_1",
+          "Worker_Low_Skill": "Manufacturing_Firm_1",
+          "Worker_Precarious": "Housing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_High_Skill"
+        ]
+      }
+    },
+    {
+      "round": 11,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 11,
+        "gdp": 43.5375,
+        "gdp_growth": 0.16255006675567418,
+        "unemployment_rate": 0.75,
+        "avg_wage": 130.0,
+        "avg_price": 10.75,
+        "inflation": -0.10416666666666667,
+        "gini": 0.1557487278548864,
+        "total_production": 64.43362255441919,
+        "total_consumer_spending": 43.5375,
+        "tax_revenue": 8.676875,
+        "government_treasury": 8.7882910173913,
+        "fiscal_health": 0.0175765820347826,
+        "welfare_score": 0.3459479795775404,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 37.54833333333333,
+        "aggregate_suffering_delta": 3.539999999999999,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 0.0,
+        "num_workers": 4,
+        "num_employed": 1,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 0.0,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": 14.443750000000001,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": -100.90625
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 476.1457618142148,
+          "Worker_Mid_Skill": 692.9633618142147,
+          "Worker_High_Skill": 775.7242618142146,
+          "Worker_Precarious": 420.6799018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 14.443750000000001,
+          "technology": 29.09375
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 0,
+          "technology": 1
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 15.0,
+          "technology": 9.25
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 0.5,
+          "transfers_to_workers": 1.5,
+          "subsidies_to_firms": 1.5
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.25,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.25,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 3.0,
+          "wage": 95.0,
+          "capital": 270.2960212852676,
+          "inventory": 8.239231262499999,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 3.0,
+          "wage": 125.0,
+          "capital": 563.4690634984539,
+          "inventory": 6.2065521,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 15.0,
+          "wage": 115.0,
+          "capital": 597.2286773,
+          "inventory": 1.4517508080808093,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 14.443750000000001,
+          "costs": 0.0,
+          "profit": 14.443750000000001,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 15.0,
+          "wage": 115.0,
+          "capital": 558.385685,
+          "inventory": 1.4874999999999998,
+          "input_inventory": 18.808930000000004,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 9.5,
+          "wage": 118.0,
+          "capital": 452.200306,
+          "inventory": 2.102727272727272,
+          "input_inventory": 18.612747111111112,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 9.0,
+          "wage": 130.0,
+          "capital": 466.8706910625,
+          "inventory": 1.4083611111111112,
+          "input_inventory": 4.215239526388888,
+          "num_employees": 1,
+          "revenue": 29.09375,
+          "costs": 130.0,
+          "profit": -100.90625,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 476.1457618142148,
+          "suffering_score": 9.491111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.025
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 692.9633618142147,
+          "suffering_score": 9.491111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.025
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Technology_Firm_2",
+          "industry": "technology",
+          "wage": 130.0,
+          "savings": 775.7242618142146,
+          "suffering_score": 9.075,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 420.6799018142148,
+          "suffering_score": 9.491111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.025
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Technology_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Mid_Skill",
+          "Worker_Low_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 12,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 12,
+        "gdp": 54.783774434343435,
+        "gdp_growth": 0.25831236139749486,
+        "unemployment_rate": 0.25,
+        "avg_wage": 135.0,
+        "avg_price": 10.25,
+        "inflation": -0.046511627906976744,
+        "gini": 0.20177345780395275,
+        "total_production": 83.5149563334596,
+        "total_consumer_spending": 54.783774434343435,
+        "tax_revenue": 22.98918872171717,
+        "government_treasury": 23.277479739108472,
+        "fiscal_health": 0.046554959478216945,
+        "welfare_score": 0.4921277495667083,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 40.34833333333333,
+        "aggregate_suffering_delta": 2.799999999999997,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 0.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 0.0,
+          "Manufacturing_Firm_2": -280.0,
+          "Housing_Firm_1": 20.32451131313133,
+          "Housing_Firm_2": 0.7237378787878612,
+          "Technology_Firm_1": 0.0,
+          "Technology_Firm_2": -91.26447475757575
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 602.8957618142148,
+          "Worker_Mid_Skill": 819.7133618142147,
+          "Worker_High_Skill": 854.4404873798712,
+          "Worker_Precarious": 421.4299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 21.048249191919194,
+          "technology": 33.735525242424245
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 2,
+          "housing": 0,
+          "technology": 1
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 14.5,
+          "technology": 8.25
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 1.0,
+          "transfers_to_workers": 3.0,
+          "subsidies_to_firms": 4.5
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 2.0,
+          "wage": 130.0,
+          "capital": 270.2960212852676,
+          "inventory": 8.239231262499999,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 3.0,
+          "wage": 140.0,
+          "capital": 283.4690634984539,
+          "inventory": 14.298552099999998,
+          "input_inventory": 0.0,
+          "num_employees": 2,
+          "revenue": 0.0,
+          "costs": 280.0,
+          "profit": -280.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 14.0,
+          "wage": 130.0,
+          "capital": 616.5369630474747,
+          "inventory": 0.0,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 20.32451131313133,
+          "costs": 0.0,
+          "profit": 20.32451131313133,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 15.0,
+          "wage": 135.0,
+          "capital": 559.0732359848485,
+          "inventory": 1.439250808080809,
+          "input_inventory": 18.808930000000004,
+          "num_employees": 0,
+          "revenue": 0.7237378787878612,
+          "costs": 0.0,
+          "profit": 0.7237378787878612,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 8.5,
+          "wage": 135.0,
+          "capital": 452.200306,
+          "inventory": 2.102727272727272,
+          "input_inventory": 18.612747111111112,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 8.0,
+          "wage": 125.0,
+          "capital": 373.91944004280305,
+          "inventory": 2.651420455808079,
+          "input_inventory": 2.5772395263888885,
+          "num_employees": 1,
+          "revenue": 33.735525242424245,
+          "costs": 125.0,
+          "profit": -91.26447475757575,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 140.0,
+          "savings": 602.8957618142148,
+          "suffering_score": 10.091111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "wage": 140.0,
+          "savings": 819.7133618142147,
+          "suffering_score": 10.091111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Technology_Firm_2",
+          "industry": "technology",
+          "wage": 125.0,
+          "savings": 854.4404873798712,
+          "suffering_score": 9.674999999999999,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 421.4299018142148,
+          "suffering_score": 10.491111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Manufacturing_Firm_2",
+          "Worker_Low_Skill": "Manufacturing_Firm_2",
+          "Worker_High_Skill": "Technology_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 13,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 13,
+        "gdp": 10.25,
+        "gdp_growth": -0.8129008067473648,
+        "unemployment_rate": 0.75,
+        "avg_wage": 150.0,
+        "avg_price": 9.333333333333334,
+        "inflation": -0.08943089430894303,
+        "gini": 0.22946033865951684,
+        "total_production": 42.39272036065462,
+        "total_consumer_spending": 10.25,
+        "tax_revenue": 8.0125,
+        "government_treasury": 9.289979739108471,
+        "fiscal_health": 0.018579959478216942,
+        "welfare_score": 0.2788478709455743,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 43.717564102564104,
+        "aggregate_suffering_delta": 3.369230769230775,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 0.0,
+        "num_workers": 4,
+        "num_employed": 1,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 0.0,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": 10.25,
+          "Technology_Firm_1": -150.0,
+          "Technology_Firm_2": 0.0
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 602.8957618142148,
+          "Worker_Mid_Skill": 956.9633618142147,
+          "Worker_High_Skill": 854.4404873798712,
+          "Worker_Precarious": 421.4299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 10.25,
+          "technology": 0.0
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 0,
+          "technology": 1
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 14.0,
+          "technology": 6.0
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 3.0,
+          "transfers_to_workers": 5.0,
+          "subsidies_to_firms": 14.0
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 4.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 4.0,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 6.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 2.5,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 2.5,
+          "wage": 145.0,
+          "capital": 270.2960212852676,
+          "inventory": 8.239231262499999,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 1.5,
+          "wage": 130.0,
+          "capital": 283.4690634984539,
+          "inventory": 14.298552099999998,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 15.0,
+          "wage": 140.0,
+          "capital": 616.5369630474747,
+          "inventory": 0.0,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 13.0,
+          "wage": 145.0,
+          "capital": 568.8107359848484,
+          "inventory": 0.6507892696192705,
+          "input_inventory": 18.808930000000004,
+          "num_employees": 0,
+          "revenue": 10.25,
+          "costs": 0.0,
+          "profit": 10.25,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 7.0,
+          "wage": 150.0,
+          "capital": 302.200306,
+          "inventory": 6.302727272727271,
+          "input_inventory": 17.352747111111114,
+          "num_employees": 1,
+          "revenue": 0.0,
+          "costs": 150.0,
+          "profit": -150.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 5.0,
+          "wage": 140.0,
+          "capital": 373.91944004280305,
+          "inventory": 2.651420455808079,
+          "input_inventory": 2.5772395263888885,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 602.8957618142148,
+          "suffering_score": 11.014188034188034,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.09615384615384616
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Technology_Firm_1",
+          "industry": "technology",
+          "wage": 150.0,
+          "savings": 956.9633618142147,
+          "suffering_score": 10.69111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 854.4404873798712,
+          "suffering_score": 10.598076923076922,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.09615384615384616
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 421.4299018142148,
+          "suffering_score": 11.414188034188035,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.09615384615384616
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Technology_Firm_1"
+        },
+        "unemployed": [
+          "Worker_High_Skill",
+          "Worker_Low_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 14,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 14,
+        "gdp": 157.6833518324462,
+        "gdp_growth": 14.383741642189872,
+        "unemployment_rate": 0.25,
+        "avg_wage": 160.0,
+        "avg_price": 8.25,
+        "inflation": -0.11607142857142863,
+        "gini": 0.2737346921246576,
+        "total_production": 180.77537385127732,
+        "total_consumer_spending": 157.6833518324462,
+        "tax_revenue": 31.884167591622308,
+        "government_treasury": 33.174147330730776,
+        "fiscal_health": 0.06634829466146155,
+        "welfare_score": 0.5132011564349817,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 46.47589743589744,
+        "aggregate_suffering_delta": 2.758333333333333,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 55.0,
+        "num_workers": 4,
+        "num_employed": 3,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 0.0,
+          "Manufacturing_Firm_2": 0.0,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": -358.79052876456876,
+          "Technology_Firm_1": 25.868198773782616,
+          "Technology_Firm_2": 10.605681823232317
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 749.5207618142148,
+          "Worker_Mid_Skill": 1103.5883618142147,
+          "Worker_High_Skill": 862.007135547425,
+          "Worker_Precarious": 421.4299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 0.0,
+          "housing": 121.20947123543125,
+          "technology": 36.47388059701493
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 3,
+          "technology": 0
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 12.5,
+          "technology": 4.25
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 1.0,
+          "transfers_to_workers": 2.5,
+          "subsidies_to_firms": 4.5
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 50.0,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 150.0,
+          "capital": 740.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 50.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 1.5,
+          "wage": 155.0,
+          "capital": 270.2960212852676,
+          "inventory": 8.239231262499999,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 1.0,
+          "wage": 155.0,
+          "capital": 283.4690634984539,
+          "inventory": 14.298552099999998,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 13.0,
+          "wage": 155.0,
+          "capital": 616.5369630474747,
+          "inventory": 0.0,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 12.0,
+          "wage": 160.0,
+          "capital": 203.95973365850807,
+          "inventory": 0.0,
+          "input_inventory": 15.028930000000003,
+          "num_employees": 3,
+          "revenue": 121.20947123543125,
+          "costs": 480.0,
+          "profit": -358.79052876456876,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 4.5,
+          "wage": 140.0,
+          "capital": 326.7750948350935,
+          "inventory": 0.5542386563311341,
+          "input_inventory": 17.352747111111114,
+          "num_employees": 0,
+          "revenue": 25.868198773782616,
+          "costs": 0.0,
+          "profit": 25.868198773782616,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 4.0,
+          "wage": 100.0,
+          "capital": 378.99483777487376,
+          "inventory": 0.0,
+          "input_inventory": 2.5772395263888885,
+          "num_employees": 0,
+          "revenue": 10.605681823232317,
+          "costs": 0.0,
+          "profit": 10.605681823232317,
+          "lobby_spending": 5.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": "Housing_Firm_2",
+          "industry": "housing",
+          "wage": 160.0,
+          "savings": 749.5207618142148,
+          "suffering_score": 11.614188034188034,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Housing_Firm_2",
+          "industry": "housing",
+          "wage": 160.0,
+          "savings": 1103.5883618142147,
+          "suffering_score": 11.29111111111111,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": "Housing_Firm_2",
+          "industry": "housing",
+          "wage": 160.0,
+          "savings": 862.007135547425,
+          "suffering_score": 11.198076923076922,
+          "productivity_modifier": 0.7,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.5
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 421.4299018142148,
+          "suffering_score": 12.372521367521369,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.052083333333333336
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_High_Skill": "Housing_Firm_2",
+          "Worker_Mid_Skill": "Housing_Firm_2",
+          "Worker_Low_Skill": "Housing_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Precarious"
+        ]
+      }
+    },
+    {
+      "round": 15,
+      "institutional_integrity": 1.0,
+      "statistics": {
+        "round_num": 15,
+        "gdp": 6.2579738626875,
+        "gdp_growth": -0.9603130337479305,
+        "unemployment_rate": 0.75,
+        "avg_wage": 175.0,
+        "avg_price": 8.416666666666666,
+        "inflation": 0.02020202020202013,
+        "gini": 0.31154278990553685,
+        "total_production": 13.213548943692244,
+        "total_consumer_spending": 0.625,
+        "tax_revenue": 9.062898693134375,
+        "government_treasury": 34.23704602386515,
+        "fiscal_health": 0.06847409204773029,
+        "welfare_score": 0.25594606004099224,
+        "basic_needs_fulfillment_rate": 0.0,
+        "total_suffering": 50.47589743589744,
+        "aggregate_suffering_delta": 4.0,
+        "institutional_integrity": 1.0,
+        "total_lobby_spending": 10.0,
+        "num_workers": 4,
+        "num_employed": 1,
+        "firm_profits": {
+          "Agriculture_Firm_1": 0.0,
+          "Agriculture_Firm_2": 0.0,
+          "Manufacturing_Firm_1": 5.5614811021875,
+          "Manufacturing_Firm_2": 0.07149276049999999,
+          "Housing_Firm_1": 0.0,
+          "Housing_Firm_2": 0.0,
+          "Technology_Firm_1": 0.625,
+          "Technology_Firm_2": -180.6329738626875
+        },
+        "worker_savings": {
+          "Worker_Low_Skill": 750.1457618142148,
+          "Worker_Mid_Skill": 1270.4633618142147,
+          "Worker_High_Skill": 862.632135547425,
+          "Worker_Precarious": 421.4299018142148
+        },
+        "industry_gdp": {
+          "agriculture": 0.0,
+          "manufacturing": 5.6329738626875,
+          "housing": 0.0,
+          "technology": 0.625
+        },
+        "industry_employment": {
+          "agriculture": 0,
+          "manufacturing": 0,
+          "housing": 0,
+          "technology": 1
+        },
+        "industry_avg_price": {
+          "agriculture": 8.0,
+          "housing": 12.5,
+          "technology": 4.75
+        }
+      },
+      "government_action": {
+        "income_tax_rate": 0.05,
+        "corporate_tax_rate": 0.05,
+        "spending": {
+          "infrastructure": 1.0,
+          "transfers_to_workers": 2.5,
+          "subsidies_to_firms": 4.5
+        },
+        "industry_policies": {
+          "AGRICULTURE": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 0.0,
+            "regulation_strength": 0.0
+          },
+          "MANUFACTURING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.0,
+            "regulation_strength": 0.0
+          },
+          "HOUSING": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 1.5,
+            "regulation_strength": 0.0
+          },
+          "TECHNOLOGY": {
+            "price_cap": -1.0,
+            "wage_floor": -1.0,
+            "subsidy": 2.0,
+            "regulation_strength": 0.0
+          }
+        }
+      },
+      "firm_states": [
+        {
+          "name": "Agriculture_Firm_1",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 155.0,
+          "capital": 790.6424,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Agriculture_Firm_2",
+          "industry": "agriculture",
+          "price": 8.0,
+          "wage": 150.0,
+          "capital": 740.0,
+          "inventory": 0.0,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Manufacturing_Firm_1",
+          "industry": "manufacturing",
+          "price": 1.0,
+          "wage": 170.0,
+          "capital": 265.57942833234574,
+          "inventory": 0.8239231262499995,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 5.5614811021875,
+          "costs": 0.0,
+          "profit": 5.5614811021875,
+          "lobby_spending": 10.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Manufacturing_Firm_2",
+          "industry": "manufacturing",
+          "price": 0.5,
+          "wage": 170.0,
+          "capital": 283.53698162092894,
+          "inventory": 7.149276049999999,
+          "input_inventory": 0.0,
+          "num_employees": 0,
+          "revenue": 0.07149276049999999,
+          "costs": 0.0,
+          "profit": 0.07149276049999999,
+          "lobby_spending": 0.0,
+          "is_consumer_good": false
+        },
+        {
+          "name": "Housing_Firm_1",
+          "industry": "housing",
+          "price": 12.0,
+          "wage": 165.0,
+          "capital": 616.5369630474747,
+          "inventory": 0.0,
+          "input_inventory": 8.270999999999999,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Housing_Firm_2",
+          "industry": "housing",
+          "price": 13.0,
+          "wage": 160.0,
+          "capital": 203.95973365850807,
+          "inventory": 0.0,
+          "input_inventory": 15.028930000000003,
+          "num_employees": 0,
+          "revenue": 0.0,
+          "costs": 0.0,
+          "profit": 0.0,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_1",
+          "industry": "technology",
+          "price": 4.5,
+          "wage": 170.0,
+          "capital": 327.3688448350935,
+          "inventory": 0.4153497674422452,
+          "input_inventory": 17.352747111111114,
+          "num_employees": 0,
+          "revenue": 0.625,
+          "costs": 0.0,
+          "profit": 0.625,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        },
+        {
+          "name": "Technology_Firm_2",
+          "industry": "technology",
+          "price": 5.0,
+          "wage": 175.0,
+          "capital": 198.36186391218627,
+          "inventory": 4.199999999999999,
+          "input_inventory": 15.881823712638889,
+          "num_employees": 1,
+          "revenue": 0.0,
+          "costs": 180.6329738626875,
+          "profit": -180.6329738626875,
+          "lobby_spending": 0.0,
+          "is_consumer_good": true
+        }
+      ],
+      "worker_states": [
+        {
+          "name": "Worker_Low_Skill",
+          "archetype": "low_skill",
+          "skill_level": 0.7,
+          "representative_count": 3,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 750.1457618142148,
+          "suffering_score": 12.614188034188034,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Mid_Skill",
+          "archetype": "mid_skill",
+          "skill_level": 1.0,
+          "representative_count": 3,
+          "employer": "Technology_Firm_2",
+          "industry": "technology",
+          "wage": 175.0,
+          "savings": 1270.4633618142147,
+          "suffering_score": 12.29111111111111,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_High_Skill",
+          "archetype": "high_skill",
+          "skill_level": 1.3,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 862.632135547425,
+          "suffering_score": 12.198076923076922,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        },
+        {
+          "name": "Worker_Precarious",
+          "archetype": "precarious",
+          "skill_level": 0.5,
+          "representative_count": 2,
+          "employer": null,
+          "industry": null,
+          "wage": 0.0,
+          "savings": 421.4299018142148,
+          "suffering_score": 13.372521367521369,
+          "productivity_modifier": 0.595,
+          "food_consumed": 0.0,
+          "shelter_consumed": 0.0
+        }
+      ],
+      "labor_results": {
+        "assignments": {
+          "Worker_Mid_Skill": "Technology_Firm_2"
+        },
+        "unemployed": [
+          "Worker_Low_Skill",
+          "Worker_High_Skill",
+          "Worker_Precarious"
+        ]
+      }
+    }
+  ],
+  "llm_cost": {
+    "claude-opus-4-6": {
+      "calls": 75,
+      "input_tokens": 175787,
+      "output_tokens": 48754,
+      "cost_usd": 6.293354999999999
+    },
+    "claude-haiku-4-5-20251001": {
+      "calls": 177,
+      "input_tokens": 438594,
+      "output_tokens": 132026,
+      "cost_usd": 0.8789791999999998
+    },
+    "claude-sonnet-4-6": {
+      "calls": 30,
+      "input_tokens": 53921,
+      "output_tokens": 12984,
+      "cost_usd": 0.3565229999999999
+    }
+  },
+  "config": {
+    "coordination_mechanism": 0.1,
+    "planning_structure": 0.2,
+    "meta_game_constraint": 0.1,
+    "num_rounds": 15,
+    "initial_institutional_integrity": 0.30999999999999994,
+    "industries": {
+      "agriculture": {
+        "num_firms": 2,
+        "base_price": 8.0,
+        "productivity_factor": 10.0,
+        "model_tier": "haiku",
+        "is_necessity": true
+      },
+      "manufacturing": {
+        "num_firms": 2,
+        "base_price": 12.0,
+        "productivity_factor": 8.0,
+        "model_tier": "opus",
+        "is_necessity": false
+      },
+      "housing": {
+        "num_firms": 2,
+        "base_price": 25.0,
+        "productivity_factor": 5.0,
+        "model_tier": "sonnet",
+        "is_necessity": true
+      },
+      "technology": {
+        "num_firms": 2,
+        "base_price": 15.0,
+        "productivity_factor": 6.0,
+        "model_tier": "opus",
+        "is_necessity": false
+      }
+    },
+    "worker_profiles": [
+      {
+        "name": "low_skill",
+        "skill_level": 0.7,
+        "representative_count": 3
+      },
+      {
+        "name": "mid_skill",
+        "skill_level": 1.0,
+        "representative_count": 3
+      },
+      {
+        "name": "high_skill",
+        "skill_level": 1.3,
+        "representative_count": 2
+      },
+      {
+        "name": "precarious",
+        "skill_level": 0.5,
+        "representative_count": 2
+      }
+    ]
+  }
+}

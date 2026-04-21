@@ -105,14 +105,24 @@ Reason through the economic situation, then output a single JSON object.
         firms = world_state.get("firms", [])
         workers = world_state.get("workers", [])
 
-        # Industry summary
+        # Industry summary with necessity flag
+        necessity_industries = {
+            req.industry.value
+            for req in self.config.necessity_requirements
+        }
         industry_lines = {}
+        industry_wages = {}   # industry → [wages paid]
         for f in firms:
             ind = f.get("industry", "unknown")
+            is_nec = "⚠ NECESSITY" if ind in necessity_industries else "discretionary"
             industry_lines.setdefault(ind, []).append(
                 f"    {f['name']}: revenue=${f.get('revenue', 0):.0f}, "
-                f"employees={f.get('num_employees', 0)}, price=${f.get('price', 0):.2f}"
+                f"employees={f.get('num_employees', 0)}, wage=${f.get('wage', 0):.0f}, "
+                f"price=${f.get('price', 0):.2f}  [{is_nec}]"
             )
+            if f.get("num_employees", 0) > 0:
+                industry_wages.setdefault(ind, []).append(f.get("wage", 0))
+
         industry_str = ""
         for ind, lines in industry_lines.items():
             industry_str += f"  [{ind.upper()}]\n" + "\n".join(lines) + "\n"
@@ -127,6 +137,44 @@ Reason through the economic situation, then output a single JSON object.
         welfare = stats.get("welfare_score", 0.0)
         prev_welfare = stats.get("prev_welfare_score", welfare)
         welfare_trend = "▲" if welfare > prev_welfare else ("▼" if welfare < prev_welfare else "—")
+
+        # Causal diagnostics — the key section the government was missing
+        causal_lines = []
+        all_wages = [w for wages in industry_wages.values() for w in wages]
+        market_wage = sum(all_wages) / len(all_wages) if all_wages else 0
+
+        for ind in necessity_industries:
+            ind_firms = [f for f in firms if f.get("industry") == ind]
+            total_employees = sum(f.get("num_employees", 0) for f in ind_firms)
+            total_revenue = sum(f.get("revenue", 0) for f in ind_firms)
+            ind_wages = industry_wages.get(ind, [])
+            avg_ind_wage = sum(ind_wages) / len(ind_wages) if ind_wages else 0
+            avg_competing_wage = (
+                sum(w for i, wages in industry_wages.items() for w in wages if i != ind)
+                / max(sum(len(v) for i, v in industry_wages.items() if i != ind), 1)
+            )
+
+            if total_employees == 0:
+                causal_lines.append(
+                    f"  ⚠ {ind.upper()} (necessity): 0 workers → 0 production → "
+                    f"workers CANNOT buy {ind}.\n"
+                    f"    Cause: market wage here ≈ ${avg_ind_wage:.0f} vs "
+                    f"other industries ≈ ${avg_competing_wage:.0f}. "
+                    f"Workers chose higher-paying jobs.\n"
+                    f"    Fix options: raise wage_floor for {ind} above ${avg_competing_wage:.0f}, "
+                    f"or increase subsidy so firms can afford to pay more."
+                )
+            elif total_revenue == 0 and total_employees > 0:
+                causal_lines.append(
+                    f"  ⚠ {ind.upper()} (necessity): has workers but $0 revenue — "
+                    f"goods not reaching consumers (price too high or inventory cleared)."
+                )
+            else:
+                causal_lines.append(
+                    f"  ✓ {ind.upper()}: {total_employees} workers, revenue=${total_revenue:.0f}"
+                )
+
+        causal_str = "\n".join(causal_lines) if causal_lines else "  (no necessity industries configured)"
 
         # Lobby buffer
         lobby_section = ""
@@ -165,10 +213,17 @@ GOVERNMENT FINANCES:
 
 INDUSTRY SNAPSHOT:
 {industry_str}
+NECESSITY SECTOR DIAGNOSIS (⚠ = action needed):
+{causal_str}
+
 WORKERS:
   Total: {len(workers)} | Employed: {employed}
   Average savings: ${avg_savings:.2f}
+  Market wage (employed workers): ${market_wage:.0f}
 {needs_report}{lobby_section}
+POLICY REMINDER: wage_floor in industry_policies must EXCEED the market wage (currently ~${market_wage:.0f})
+to actually redirect workers toward necessity sectors. A floor below market wages has no effect.
+
 Set policy. Output JSON:
 {{
   "income_tax_rate": <float>,

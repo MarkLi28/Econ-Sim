@@ -79,7 +79,8 @@ class EconomicConfig:
     meta_game_constraint: float = 0.1     # 0.0=open lobby   →  1.0=suppressed
 
     # --- Simulation scale ---
-    num_rounds: int = 15
+    num_rounds: int = 40    # hard cap — convergence detection may stop earlier
+    min_rounds: int = 10    # never stop before this many rounds
 
     # --- Structure (populated by __post_init__ if left empty) ---
     industry_configs: Dict[Industry, IndustryConfig] = field(default_factory=dict)
@@ -96,6 +97,10 @@ class EconomicConfig:
     initial_institutional_integrity: float = -1.0   # sentinel → derived
     integrity_recovery_rate: float = 0.04            # per-round recovery under high public pressure
     suffering_pressure_threshold: float = 0.35       # aggregate suffering fraction that triggers pressure
+
+    # --- Labor market friction ---
+    hiring_cost_factor: float = 0.5    # cost per new hire = this × their wage
+    firing_cost_factor: float = 1.0    # cost per layoff  = this × their wage
 
     # --- LLM settings ---
     temperature: float = 0.7

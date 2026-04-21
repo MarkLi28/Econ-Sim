@@ -58,6 +58,9 @@ class FirmAgent(BaseEconomicAgent):
         self.b2b_price: float = industry_config.base_price * 0.8
         self.b2b_allocation_fraction: float = 0.5
 
+        # Hiring/firing friction tracking
+        self.prev_num_employees: int = 0
+
         # Lobby tracking
         self.lobby_spending_this_round: float = 0.0
         self.lobby_message_this_round: str = ""
@@ -131,10 +134,11 @@ Reason through your strategy, then output a single JSON object.
         return f"""=== ROUND {round_num} — {self.name} ({iname}) ===
 
 YOUR FINANCIALS:
-  Capital: ${self.capital:.2f} | Employees: {len(self.employees)}
+  Capital: ${self.capital:.2f} | Employees: {len(self.employees)} (prev round: {self.prev_num_employees})
   Inventory: {self.inventory:.1f} units | Input inventory: {self.input_inventory:.1f} units
   Last round — revenue: ${self.revenue:.2f}, costs: ${self.costs:.2f}, profit: ${self.profit:.2f}
   Current price: ${self.price:.2f} | wage: ${self.wage:.2f}
+  Hiring/firing costs: {self.config.hiring_cost_factor:.1f}× wage per new hire, {self.config.firing_cost_factor:.1f}× wage per layoff
 
 ECONOMY:
   GDP: ${world_state.get('gdp', 0):.2f} | Unemployment: {world_state.get('unemployment_rate', 0):.1%}

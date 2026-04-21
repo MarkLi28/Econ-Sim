@@ -7,7 +7,7 @@ from econ_sim.agents.firm import FirmAgent
 from econ_sim.agents.worker import WorkerAgent
 from econ_sim.engine.markets import LaborMarket, InputMarket, GoodsMarket
 from econ_sim.engine.production import ProductionFunction
-from econ_sim.engine.statistics import StatisticsTracker
+from econ_sim.engine.statistics import StatisticsTracker, ConvergenceResult
 from econ_sim.llm.client import AnthropicLLMClient
 from econ_sim.output.recorder import SimulationRecorder
 
@@ -89,9 +89,11 @@ class EconomicEnvironment:
     # ------------------------------------------------------------------
 
     def run(self) -> dict:
-        logger.info(f"Starting simulation: {self.config.num_rounds} rounds")
+        logger.info(f"Starting simulation: max {self.config.num_rounds} rounds "
+                    f"(min {self.config.min_rounds} before convergence check)")
         world_state = self._build_world_state(round_num=0)
 
+        convergence: Optional[ConvergenceResult] = None
         for round_num in range(1, self.config.num_rounds + 1):
             logger.info(f"\n{'='*60}")
             logger.info(f"ROUND {round_num} / {self.config.num_rounds}")
@@ -99,14 +101,32 @@ class EconomicEnvironment:
             self._run_round(round_num, world_state)
             world_state = self._build_world_state(round_num)
 
+            # Check for convergence after min_rounds
+            if round_num >= self.config.min_rounds:
+                convergence = self.stats.check_convergence(
+                    min_rounds=self.config.min_rounds
+                )
+                if convergence.converged:
+                    print(f"\n  ✓ Convergence at round {round_num}: {convergence.message}")
+                    break
+
+        if convergence is None or not convergence.converged:
+            # Ran to max_rounds without converging — classify what we observed
+            convergence = self.stats.check_convergence(
+                min_rounds=self.config.min_rounds, window=min(10, len(self.stats.history))
+            )
+            print(f"\n  ⚠ Reached max rounds ({self.config.num_rounds}) without convergence.")
+            print(f"     Best trend estimate: {convergence.trend} — {convergence.message}")
+
         regime = self.stats.classify_regime()
-        logger.info(f"\nSimulation complete. Regime: {regime}")
+        logger.info(f"\nSimulation complete. Regime: {regime} | Trend: {convergence.trend}")
 
         return self.recorder.finalize(
             stats_history=self.stats.history,
             regime=regime,
             integrity_history=[s.institutional_integrity for s in self.stats.history],
             cost_summary=self.llm.cost_summary(),
+            convergence=convergence,
         )
 
     def _run_round(self, round_num: int, world_state: dict):
@@ -156,9 +176,27 @@ class EconomicEnvironment:
 
         # ── Phase 5: Labor market clearing ──────────────────────────
         logger.info("Phase 5: Labor market clearing")
+        # Snapshot headcount before clearing so we can compute hiring/firing costs
+        for firm in self.firms:
+            firm.prev_num_employees = len(firm.employees)
         labor_results = self.labor_market.clear(
             firm_actions, worker_employment_actions, self.firms, self.workers
         )
+        # Apply hiring/firing costs (discourages employment cycling)
+        for firm in self.firms:
+            new_hires = max(0, len(firm.employees) - firm.prev_num_employees)
+            layoffs   = max(0, firm.prev_num_employees - len(firm.employees))
+            friction_cost = (
+                new_hires * self.config.hiring_cost_factor
+                + layoffs * self.config.firing_cost_factor
+            ) * firm.wage
+            if friction_cost > 0:
+                firm.capital -= friction_cost
+                firm.costs   += friction_cost
+                logger.debug(
+                    f"  {firm.name}: +{new_hires} hires, -{layoffs} layoffs, "
+                    f"friction=${friction_cost:.2f}"
+                )
 
         # ── Phase 6: Production ─────────────────────────────────────
         logger.info("Phase 6: Production")
@@ -395,4 +433,17 @@ class EconomicEnvironment:
             print(f"  Industry GDP:")
             for ind, rev in stats.industry_gdp.items():
                 print(f"    {ind:<16} ${rev:.2f}")
+
+        # Live trend estimate (shown once we have enough history)
+        if round_num >= self.config.min_rounds:
+            cr = self.stats.check_convergence(min_rounds=self.config.min_rounds)
+            trend_icons = {
+                "stable": "━", "rising": "▲", "falling": "▼",
+                "oscillating": "↕", "collapse": "✗", "unknown": "…",
+            }
+            icon = trend_icons.get(cr.trend, "?")
+            if cr.trend != "unknown":
+                print(f"  Trend:        {icon} {cr.trend:<12} conf={cr.confidence:.0%}  {cr.message}")
+            else:
+                print(f"  Trend:        {icon} {cr.message}")
         print()
