@@ -16,9 +16,39 @@ import itertools
 import json
 import logging
 import os
+import uuid
 
 from econ_sim.config import SYSTEM_PRESETS, EconomicConfig, make_config
 from econ_sim.engine.environment import EconomicEnvironment
+from econ_sim import registry
+
+
+def _run_one(
+    config: EconomicConfig,
+    output_dir: str,
+    sweep_id: str | None = None,
+    sweep_name: str | None = None,
+    seed: int | None = None,
+) -> dict:
+    """Run one simulation under the registry. Returns the result dict."""
+    env = EconomicEnvironment(config, output_dir=output_dir)
+    with registry.start_run(
+        config,
+        sweep_id=sweep_id,
+        sweep_name=sweep_name,
+        seed=seed,
+        architecture="llm_only",
+        tier="toy",
+    ) as run:
+        result = env.run()
+        run.complete(
+            result,
+            cost_summary=env.llm.cost_summary(),
+            results_path=os.path.join(
+                output_dir, f"{config.label()}_simulation_results.json"
+            ),
+        )
+        return result
 
 
 def main():
@@ -99,8 +129,7 @@ def _run_single(args):
     _print_cost_estimate(config)
     print()
 
-    env = EconomicEnvironment(config, output_dir=args.output_dir)
-    result = env.run()
+    result = _run_one(config, output_dir=args.output_dir)
 
     print(f"\n{'='*60}")
     print(f"SIMULATION COMPLETE")
@@ -136,13 +165,21 @@ def _run_sweep(args):
     os.makedirs(sweep_dir, exist_ok=True)
     sweep_results = []
 
+    sweep_id = str(uuid.uuid4())
+    sweep_name = f"grid{n}_r{args.rounds}"
+    print(f"Sweep ID: {sweep_id}  ({sweep_name})")
+
     for i, (c, s, m) in enumerate(combos, 1):
         print(f"\n[{i}/{total}] coord={c:.2f} struct={s:.2f} meta={m:.2f}")
         config = make_config(coordination=c, structure=s, meta_game=m, num_rounds=args.rounds)
 
         try:
-            env = EconomicEnvironment(config, output_dir=sweep_dir)
-            result = env.run()
+            result = _run_one(
+                config,
+                output_dir=sweep_dir,
+                sweep_id=sweep_id,
+                sweep_name=sweep_name,
+            )
             sweep_results.append({
                 "coordination": c,
                 "planning_structure": s,

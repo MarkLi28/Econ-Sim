@@ -396,3 +396,41 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# ----------------------------------------------------------------------------
+# Project-specific ignores (econ-sim)
+# ----------------------------------------------------------------------------
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# SQLite registry artifacts (DB lives outside the repo by default,
+# but ignore *.db and *.sqlite if anyone runs with a local DB path)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Simulation outputs
+results/
+econ-sim-data/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
