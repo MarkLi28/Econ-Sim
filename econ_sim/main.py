@@ -79,8 +79,9 @@ def main():
                         help="Number of steps per axis in sweep (3=0/0.5/1, 5=0/0.25/0.5/0.75/1)")
 
     # Simulation settings
-    parser.add_argument("--rounds", type=int, default=40,
-                        help="Max rounds per simulation (convergence detection may stop earlier)")
+    parser.add_argument("--rounds", type=int, default=60,
+                        help="Max rounds per simulation (convergence detection may stop earlier; "
+                             "default 60 with persistence requirement of 5 consecutive matching rounds)")
     parser.add_argument("--output-dir", type=str, default="results", help="Output directory")
     parser.add_argument("--verbose", action="store_true", help="Enable debug logging")
 

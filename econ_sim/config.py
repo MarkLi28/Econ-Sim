@@ -79,8 +79,14 @@ class EconomicConfig:
     meta_game_constraint: float = 0.1     # 0.0=open lobby   →  1.0=suppressed
 
     # --- Simulation scale ---
-    num_rounds: int = 40    # hard cap — convergence detection may stop earlier
-    min_rounds: int = 10    # never stop before this many rounds
+    num_rounds: int = 60    # hard cap — convergence detection may stop earlier
+    min_rounds: int = 15    # never stop before this many rounds (initial-condition burn-in)
+
+    # --- Convergence detection ---
+    # The same trend classification (welfare × integrity) must hold for this
+    # many consecutive rounds before the simulation stops early. Trades a
+    # few extra rounds of cost for much stronger end-game equilibrium claims.
+    convergence_persistence_rounds: int = 5
 
     # --- Structure (populated by __post_init__ if left empty) ---
     industry_configs: Dict[Industry, IndustryConfig] = field(default_factory=dict)
@@ -320,7 +326,7 @@ def make_config(
     coordination: float,
     structure: float,
     meta_game: float,
-    num_rounds: int = 15,
+    num_rounds: int = 60,
     **kwargs,
 ) -> EconomicConfig:
     return EconomicConfig(

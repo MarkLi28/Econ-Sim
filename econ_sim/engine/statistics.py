@@ -4,12 +4,35 @@ from typing import Dict, Optional
 
 @dataclass
 class ConvergenceResult:
-    """Result of a convergence/trend check on the welfare time-series."""
+    """Result of a convergence/trend check on welfare AND integrity time-series.
+
+    `trend` is the combined label produced by _compose_trend (e.g. "stable",
+    "capture_in_progress", "decay"). `welfare_trend` and `integrity_trend`
+    are the per-series classifications that produced it.
+
+    `converged` is True only when the combined classification has held for
+    `persistence_required` consecutive rounds — guards against false-positive
+    convergence on transient stability windows.
+    """
     converged: bool
-    trend: str          # "stable" | "rising" | "falling" | "oscillating" | "collapse" | "unknown"
-    confidence: float   # 0.0–1.0
+    trend: str          # combined label (see _compose_trend)
+    confidence: float   # 0.0-1.0
     rounds_observed: int
     message: str
+    welfare_trend: str = "unknown"
+    integrity_trend: str = "unknown"
+    persistence_streak: int = 0
+    persistence_required: int = 1
+
+
+@dataclass
+class _SeriesClassification:
+    """Per-series classification produced by _classify_series."""
+    label: str        # stable | rising | falling | oscillating | bottomed | unknown
+    slope: float      # linear regression slope over the window
+    r_sq: float       # R² of the linear fit
+    variance: float   # sample variance of the window
+    confidence: float # 0-1 informational confidence proxy
 
 
 @dataclass
@@ -64,6 +87,9 @@ class StatisticsTracker:
         self.history: list[RoundStatistics] = []
         self._prev_avg_price: Optional[float] = None
         self._prev_gdp: Optional[float] = None
+        # Persistence tracking for convergence detector
+        self._last_classification: Optional[tuple[str, str]] = None
+        self._classification_streak: int = 0
 
     def current(self) -> dict:
         if not self.history:
@@ -255,89 +281,86 @@ class StatisticsTracker:
 
         return "mixed_unstable"
 
-    def check_convergence(self, min_rounds: int = 10, window: int = 7) -> ConvergenceResult:
-        """Check whether the simulation has reached a classifiable attractor.
+    # ------------------------------------------------------------------
+    # Convergence detection (welfare + integrity, with persistence)
+    # ------------------------------------------------------------------
 
-        Looks at the welfare time-series over the last `window` rounds and
-        returns a ConvergenceResult classifying the trend once it is clear.
+    def check_convergence(self, min_rounds: int = 15, window: int = 7) -> ConvergenceResult:
+        """Check whether the simulation has reached a classifiable end-game state.
+
+        Each round we classify the welfare and integrity time-series
+        independently into one of: stable / rising / falling / oscillating /
+        bottomed / unknown. Their pair is then composed into a combined
+        regime label (e.g. stable+falling-integrity → "capture_in_progress").
+
+        Convergence requires the SAME (welfare_label, integrity_label) pair to
+        hold for `convergence_persistence_rounds` consecutive rounds — this
+        guards against false positives on transient stability windows. The
+        streak is tracked across calls via tracker state.
+
         The caller should stop early only when `converged=True`.
         """
         n = len(self.history)
+        K = max(1, getattr(self.config, "convergence_persistence_rounds", 5))
+
         if n < min_rounds:
             return ConvergenceResult(
                 False, "unknown", 0.0, n,
-                f"Only {n} rounds — need ≥{min_rounds} before assessing"
+                f"Only {n} rounds — need ≥{min_rounds} before assessing",
+                persistence_required=K,
             )
 
         recent = self.history[-min(window, n):]
-        welfare   = [s.welfare_score           for s in recent]
-        integrity = [s.institutional_integrity for s in recent]
-        w = len(welfare)
+        welfare_window   = [s.welfare_score           for s in recent]
+        integrity_window = [s.institutional_integrity for s in recent]
+        full_welfare     = [s.welfare_score           for s in self.history]
+        full_integrity   = [s.institutional_integrity for s in self.history]
 
-        # ── Collapse: welfare rock-bottom for 3 consecutive rounds ──────
-        if n >= 3 and all(s.welfare_score < 0.10 for s in self.history[-3:]):
-            return ConvergenceResult(
-                True, "collapse", 0.95, n,
-                f"Welfare collapsed below 0.10 for 3+ rounds"
-            )
+        welfare_class = _classify_series(
+            welfare_window, full_welfare, n_total=n,
+            var_threshold=0.0015, bottom_threshold=0.10,
+        )
+        integrity_class = _classify_series(
+            integrity_window, full_integrity, n_total=n,
+            var_threshold=0.005, bottom_threshold=0.20,
+        )
 
-        # ── Oscillation: round-to-round differences alternate sign ──────
-        diffs = [welfare[i + 1] - welfare[i] for i in range(w - 1)]
-        if len(diffs) >= 4:
-            sign_changes = sum(
-                1 for i in range(len(diffs) - 1)
-                if diffs[i] * diffs[i + 1] < 0
-            )
-            osc_ratio    = sign_changes / max(len(diffs) - 1, 1)
-            welfare_range = max(welfare) - min(welfare)
-            if osc_ratio >= 0.70 and welfare_range > 0.02:
-                return ConvergenceResult(
-                    True, "oscillating", min(0.90, osc_ratio), n,
-                    f"Welfare oscillating (range={welfare_range:.3f}, alternation={osc_ratio:.0%})"
-                )
+        combined_label = _compose_trend(welfare_class.label, integrity_class.label)
+        confidence = min(welfare_class.confidence, integrity_class.confidence)
 
-        # ── Linear regression on welfare ────────────────────────────────
-        x_mean = (w - 1) / 2.0
-        y_mean = sum(welfare) / w
-        xy_cov = sum((i - x_mean) * (welfare[i] - y_mean) for i in range(w))
-        x_var  = sum((i - x_mean) ** 2 for i in range(w))
-        slope  = xy_cov / x_var if x_var > 0 else 0.0
+        # ── Persistence streak (tracker state) ──────────────────────────
+        current_pair = (welfare_class.label, integrity_class.label)
+        both_classifiable = "unknown" not in current_pair
+        if both_classifiable and current_pair == self._last_classification:
+            self._classification_streak += 1
+        elif both_classifiable:
+            self._classification_streak = 1
+        else:
+            self._classification_streak = 0
+        self._last_classification = current_pair
 
-        y_pred = [y_mean + slope * (i - x_mean) for i in range(w)]
-        ss_res = sum((welfare[i] - y_pred[i]) ** 2 for i in range(w))
-        ss_tot = sum((welfare[i] - y_mean) ** 2 for i in range(w))
-        r_sq   = 1.0 - ss_res / ss_tot if ss_tot > 0.001 else 1.0
+        converged = both_classifiable and self._classification_streak >= K
 
-        welfare_var = ss_tot / w
-        int_mean    = sum(integrity) / w
-        int_var     = sum((v - int_mean) ** 2 for v in integrity) / w
-
-        # ── Stable: flat + low variance on both welfare and integrity ───
-        if abs(slope) < 0.005 and welfare_var < 0.0015 and int_var < 0.005:
-            return ConvergenceResult(
-                True, "stable", 0.90, n,
-                f"Welfare stable at {y_mean:.3f} ± {welfare_var**0.5:.3f}"
-            )
-
-        # ── Strong directional trend ─────────────────────────────────────
-        if r_sq > 0.80 and abs(slope) > 0.008:
-            trend = "rising" if slope > 0 else "falling"
-            return ConvergenceResult(
-                True, trend, min(0.95, r_sq), n,
-                f"Welfare {trend} at {slope:+.4f}/round (R²={r_sq:.2f})"
-            )
-
-        # ── Weaker but consistent trend after enough rounds ─────────────
-        if r_sq > 0.60 and abs(slope) > 0.005 and n >= 15:
-            trend = "rising" if slope > 0 else "falling"
-            return ConvergenceResult(
-                True, trend, r_sq, n,
-                f"Welfare trending {trend} (R²={r_sq:.2f}, slope={slope:+.4f})"
-            )
+        # ── Build human-readable message ────────────────────────────────
+        msg = (
+            f"welfare={welfare_class.label} (slope={welfare_class.slope:+.4f}, "
+            f"R²={welfare_class.r_sq:.2f}); "
+            f"integrity={integrity_class.label} (slope={integrity_class.slope:+.4f}, "
+            f"R²={integrity_class.r_sq:.2f}); "
+            f"combined={combined_label}; "
+            f"streak={self._classification_streak}/{K}"
+        )
 
         return ConvergenceResult(
-            False, "unknown", 0.0, n,
-            f"Trend unclear — R²={r_sq:.2f}, slope={slope:+.4f}, var={welfare_var:.4f}"
+            converged=converged,
+            trend=combined_label,
+            confidence=confidence,
+            rounds_observed=n,
+            message=msg,
+            welfare_trend=welfare_class.label,
+            integrity_trend=integrity_class.label,
+            persistence_streak=self._classification_streak,
+            persistence_required=K,
         )
 
     @staticmethod
@@ -351,3 +374,158 @@ class StatisticsTracker:
             return 0.0
         cumulative = sum((2 * (i + 1) - n - 1) * v for i, v in enumerate(sorted_vals))
         return max(0.0, cumulative / (n * total))
+
+
+# ---------------------------------------------------------------------------
+# Module-level helpers for convergence detection
+# ---------------------------------------------------------------------------
+
+def _classify_series(
+    window: list[float],
+    full_history: list[float],
+    *,
+    n_total: int,
+    var_threshold: float,
+    bottom_threshold: float,
+) -> _SeriesClassification:
+    """Classify a single time-series window into a trend label.
+
+    Labels:
+      bottomed    — below `bottom_threshold` for 3+ consecutive rounds (full history)
+      oscillating — alternating round-to-round diffs (≥70%) with amplitude > 0.02
+      stable      — |slope| < 0.005 and variance < `var_threshold`
+      rising      — slope > 0 with R² > 0.80, |slope| > 0.008  (or weaker if n_total ≥ 15)
+      falling     — symmetric for negative slope
+      unknown     — none of the above conditions met
+    """
+    w = len(window)
+
+    # Rock-bottom: collapse / capture detection on full history
+    if len(full_history) >= 3 and all(v < bottom_threshold for v in full_history[-3:]):
+        return _SeriesClassification(
+            label="bottomed",
+            slope=0.0,
+            r_sq=1.0,
+            variance=0.0,
+            confidence=0.95,
+        )
+
+    # Linear regression fit
+    if w < 2:
+        return _SeriesClassification("unknown", 0.0, 0.0, 0.0, 0.0)
+
+    x_mean = (w - 1) / 2.0
+    y_mean = sum(window) / w
+    xy_cov = sum((i - x_mean) * (window[i] - y_mean) for i in range(w))
+    x_var  = sum((i - x_mean) ** 2 for i in range(w))
+    slope  = xy_cov / x_var if x_var > 0 else 0.0
+
+    y_pred = [y_mean + slope * (i - x_mean) for i in range(w)]
+    ss_res = sum((window[i] - y_pred[i]) ** 2 for i in range(w))
+    ss_tot = sum((window[i] - y_mean) ** 2 for i in range(w))
+    r_sq   = 1.0 - ss_res / ss_tot if ss_tot > 0.001 else 1.0
+    variance = ss_tot / w
+
+    # Oscillation: alternating diffs
+    diffs = [window[i + 1] - window[i] for i in range(w - 1)]
+    if len(diffs) >= 4:
+        sign_changes = sum(
+            1 for i in range(len(diffs) - 1)
+            if diffs[i] * diffs[i + 1] < 0
+        )
+        osc_ratio = sign_changes / max(len(diffs) - 1, 1)
+        amplitude = max(window) - min(window)
+        if osc_ratio >= 0.70 and amplitude > 0.02:
+            return _SeriesClassification(
+                label="oscillating",
+                slope=slope,
+                r_sq=r_sq,
+                variance=variance,
+                confidence=min(0.90, osc_ratio),
+            )
+
+    # Stable: flat + low variance
+    if abs(slope) < 0.005 and variance < var_threshold:
+        return _SeriesClassification(
+            label="stable",
+            slope=slope,
+            r_sq=r_sq,
+            variance=variance,
+            confidence=0.90,
+        )
+
+    # Strong directional trend
+    if r_sq > 0.80 and abs(slope) > 0.008:
+        return _SeriesClassification(
+            label=("rising" if slope > 0 else "falling"),
+            slope=slope,
+            r_sq=r_sq,
+            variance=variance,
+            confidence=min(0.95, r_sq),
+        )
+
+    # Weaker but consistent trend after enough rounds
+    if r_sq > 0.60 and abs(slope) > 0.005 and n_total >= 15:
+        return _SeriesClassification(
+            label=("rising" if slope > 0 else "falling"),
+            slope=slope,
+            r_sq=r_sq,
+            variance=variance,
+            confidence=r_sq,
+        )
+
+    return _SeriesClassification(
+        label="unknown",
+        slope=slope,
+        r_sq=r_sq,
+        variance=variance,
+        confidence=0.0,
+    )
+
+
+# Composition table: (welfare_label, integrity_label) → combined regime label.
+# The combined label is the live runtime regime; classify_regime() produces
+# the post-hoc historical regime separately.
+_COMBINED_TREND: Dict[tuple[str, str], str] = {
+    # collapse / capture variants take precedence
+    ("bottomed", "bottomed"):    "collapse",
+    ("bottomed", "stable"):      "collapse",
+    ("bottomed", "rising"):      "collapse",
+    ("bottomed", "falling"):     "collapse",
+    ("bottomed", "oscillating"): "collapse",
+    ("bottomed", "unknown"):     "collapse",
+
+    ("stable",   "bottomed"):    "captured",     # welfare propped up under captured government
+    ("rising",   "bottomed"):    "captured",
+    ("falling",  "bottomed"):    "captured_decay",
+
+    # genuine end-game equilibria
+    ("stable",  "stable"):  "stable",
+    ("rising",  "rising"):  "improving",
+    ("falling", "falling"): "decay",
+
+    # the meta-game story: welfare looks fine, integrity is eroding
+    ("stable",  "falling"): "capture_in_progress",
+    ("rising",  "falling"): "capture_in_progress",
+
+    ("stable",  "rising"):  "recovering",
+    ("falling", "rising"):  "decoupling",   # rare: institutions hardening as welfare falls
+    ("rising",  "stable"):  "improving",
+    ("falling", "stable"):  "decay",
+
+    # oscillation in either dimension
+    ("oscillating", "stable"):      "oscillating",
+    ("oscillating", "rising"):      "oscillating",
+    ("oscillating", "falling"):     "oscillating",
+    ("oscillating", "oscillating"): "oscillating",
+    ("stable",      "oscillating"): "oscillating",
+    ("rising",      "oscillating"): "oscillating",
+    ("falling",     "oscillating"): "oscillating",
+}
+
+
+def _compose_trend(welfare: str, integrity: str) -> str:
+    """Combine per-series classifications into a single regime label."""
+    if welfare == "unknown" or integrity == "unknown":
+        return "unknown"
+    return _COMBINED_TREND.get((welfare, integrity), "diverging")

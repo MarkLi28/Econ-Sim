@@ -438,12 +438,29 @@ class EconomicEnvironment:
         if round_num >= self.config.min_rounds:
             cr = self.stats.check_convergence(min_rounds=self.config.min_rounds)
             trend_icons = {
-                "stable": "━", "rising": "▲", "falling": "▼",
-                "oscillating": "↕", "collapse": "✗", "unknown": "…",
+                "stable":               "━",
+                "improving":            "▲",
+                "recovering":           "▲",
+                "decay":                "▼",
+                "decoupling":           "◇",
+                "capture_in_progress":  "⚠",
+                "captured":             "⚑",
+                "captured_decay":       "⚑",
+                "collapse":             "✗",
+                "oscillating":          "↕",
+                "diverging":            "?",
+                "unknown":              "…",
             }
             icon = trend_icons.get(cr.trend, "?")
             if cr.trend != "unknown":
-                print(f"  Trend:        {icon} {cr.trend:<12} conf={cr.confidence:.0%}  {cr.message}")
+                streak = f"{cr.persistence_streak}/{cr.persistence_required}"
+                print(
+                    f"  Trend:        {icon} {cr.trend:<22} conf={cr.confidence:.0%}  "
+                    f"streak={streak}"
+                )
+                print(
+                    f"                W={cr.welfare_trend:<12} I={cr.integrity_trend:<12}"
+                )
             else:
                 print(f"  Trend:        {icon} {cr.message}")
         print()
